@@ -434,6 +434,9 @@ static void editor_save(EditorState *ed) {
 static void editor_loop(EditorState *ed) {
     int running = 1;
 
+    /* Clear screen once on entry — subsequent frames overwrite in place */
+    printf("\033[2J");
+
     ed->esc_warning = 0;
     ed->save_error  = 0;
 

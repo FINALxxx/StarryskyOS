@@ -54,7 +54,7 @@ static void editor_render_content_line(EditorState *ed, int screen_row,
 
     /* Line number */
     printf(LINE_NUM_STYLE);
-    printf("%*d ", LINE_NUM_WIDTH - 1, line_idx + 1);
+    printf("%4d ", line_idx + 1);
     printf(ANSI_RESET);
 
     int offset         = ed->line_offsets[line_idx];

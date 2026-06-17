@@ -67,7 +67,7 @@ size_t chdir(char * dir){
     log_info("full=%s\r\n",fullpath);
 
     FRESULT res = f_chdir(fullpath);
-    if (res != FR_OK) log_fatal("f_chdir failed: %d\r\n", res);
+    if (res != FR_OK) log_info("f_chdir failed: %d\r\n", res);
     return res;
 }
 
