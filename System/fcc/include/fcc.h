@@ -6,8 +6,9 @@
 
 /* ===== Code Buffer ===== */
 /* Internal SRAM — must be executable; PSRAM (0x40000000+) is data-only */
-#define FCC_CODE_BASE   0x30000000
-#define FCC_CODE_MAX    (32 * 1024)
+#define FCC_CODE_BASE    0x30000000
+#define FCC_CODE_MAX     (32 * 1024)
+#define FCC_GLOBAL_BASE  (FCC_CODE_BASE + FCC_CODE_MAX)
 
 /* ===== Source Buffer ===== */
 #define FCC_SRC_MAX     (32 * 1024)
@@ -71,12 +72,27 @@ typedef struct {
     Token       current;
 } Lexer;
 
+/* ===== Symbol Table ===== */
+#define MAX_VARS  256
+
+typedef struct {
+    char name[64];
+    int  offset;      /* stack offset (locals) or abs address (globals) */
+    int  is_global;
+} VarInfo;
+
 /* ===== Compiler ===== */
 typedef struct {
     Lexer     lexer;
     uint32_t *code;
     uint32_t  code_size;   /* bytes */
     int       error;
+    /* Symbol table */
+    VarInfo   vars[MAX_VARS];
+    int       var_count;
+    int       local_base;   /* index of first local in current function */
+    int       local_bytes;  /* total bytes for current function's locals */
+    int       next_global;  /* next global address offset */
 } Compiler;
 
 /* ===== Lexer API (used across fcc modules) ===== */
