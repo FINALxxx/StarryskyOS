@@ -102,13 +102,29 @@ static void editor_render_content_line(EditorState *ed, int screen_row,
 }
 
 /**
- * @brief Render bottom bar: status line
+ * @brief Render bottom bar: status line.
+ *
+ * Three modes:
+ *   Normal   — cyan:   Ln / Col / key hints
+ *   Warning  — yellow: unsaved-changes exit confirmation prompt
+ *   Error    — yellow: last save failed
  */
 static void editor_render_bottom_bar(EditorState *ed) {
     editor_gotoxy(ed->rows, 1);
-    printf(BOT_BAR_STYLE);
-    int printed = printf("  Ln %u, Col %u | Ctrl+W Save  Esc Exit",
+
+    int printed;
+    if (ed->esc_warning) {
+        printf(WARN_BAR_STYLE);
+        printed = printf("  Not saved! Press Esc again to confirm exit");
+    } else if (ed->save_error) {
+        printf(WARN_BAR_STYLE);
+        printed = printf("  Save failed!");
+    } else {
+        printf(BOT_BAR_STYLE);
+        printed = printf("  Ln %u, Col %u | Ctrl+W Save  Esc Exit",
                          ed->cursor_row + 1, ed->cursor_col + 1);
+    }
+
     int remaining = ed->cols - printed;
     while (remaining-- > 0) editor_putc(' ');
     printf(ANSI_RESET);

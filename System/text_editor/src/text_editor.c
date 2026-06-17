@@ -391,26 +391,87 @@ static void editor_insert_newline(EditorState *ed) {
     ed->dirty = 1;
 }
 
+/* ===== File I/O ===== */
+
+/**
+ * @brief Save the editor buffer to Flash via FatFs.
+ *        On success clears the dirty flag.  On failure sets save_error.
+ */
+static void editor_save(EditorState *ed) {
+#ifdef CONFIG_COMPONENT_FLASH_FS
+    FIL file;
+    FRESULT res;
+
+    res = f_open(&file, ed->fullpath, FA_CREATE_ALWAYS | FA_WRITE);
+    if (res != FR_OK) {
+        ed->save_error = 1;
+        return;
+    }
+
+    UINT bytes_written;
+    res = f_write(&file, ed->buffer, ed->text_length, &bytes_written);
+    f_close(&file);
+
+    if (res == FR_OK && bytes_written == ed->text_length) {
+        ed->dirty = 0;
+        ed->save_error = 0;
+    } else {
+        ed->save_error = 1;
+    }
+#endif
+}
+
 /* ===== Editor Loop ===== */
 
 static void editor_loop(EditorState *ed) {
     int running = 1;
 
+    ed->esc_warning = 0;
+    ed->save_error  = 0;
+
     while (running) {
         editor_render(ed);
 
         int key = editor_read_key();
+        ed->save_error = 0;  /* transient — clears on any key */
+
+        /* ESC warning state: waiting for confirmation */
+        if (ed->esc_warning) {
+            if (key == KEY_ESC) {
+                running = 0;          /* confirmed — discard changes */
+            } else {
+                ed->esc_warning = 0;  /* dismissed — back to editing */
+            }
+            continue;
+        }
+
         switch (key) {
             case KEY_UP:    editor_move_up(ed);    break;
             case KEY_DOWN:  editor_move_down(ed);  break;
             case KEY_LEFT:  editor_move_left(ed);  break;
             case KEY_RIGHT: editor_move_right(ed); break;
-            case KEY_ESC:   running = 0;           break;
+
+            case 0x17:                              /* Ctrl+W — save */
+                editor_save(ed);
+                break;
+
+            case KEY_ESC:
+                if (ed->dirty) {
+                    ed->esc_warning = 1;
+                } else {
+                    running = 0;
+                }
+                break;
+
             case '\r':                              /* Enter (CR) */
-                editor_insert_newline(ed);          break;
+                editor_insert_newline(ed);
+                break;
+
             case 0x08:                              /* Backspace */
             case 0x7F:                              /* Delete */
-                editor_delete_char(ed);             break;
+                editor_delete_char(ed);
+                break;
+
             default:
                 if (key >= 0x20 && key <= 0x7E) {
                     editor_insert_char(ed, (char)key);
