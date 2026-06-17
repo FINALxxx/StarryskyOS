@@ -13,6 +13,7 @@
 #include "shell_fs.h"
 #include "shell_port.h"
 #include "text_editor.h"
+#include "fcc.h"
 
 #if SHELL_USING_CMD_EXPORT != 1
 
@@ -32,6 +33,7 @@ extern void shellVars(void);
 extern void shellKeys(void);
 extern void shellClear(void);
 extern int editCmd(int argc, char *argv[]);
+extern int fccCmd(int argc, char *argv[]);
 #if SHELL_EXEC_UNDEF_FUNC == 1
 extern int shellExecute(int argc, char *argv[]);
 #endif
@@ -143,6 +145,11 @@ const ShellCommand shellCommandList[] =
                     edit,
                     editCmd,
                     edit file\r\nedit <filename>),
+
+    SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN)|SHELL_CMD_DISABLE_RETURN,
+                    fcc,
+                    fccCmd,
+                    compile C source\r\nfcc <source.c>),
 #endif
 
     SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_FUNC)|SHELL_CMD_DISABLE_RETURN,
