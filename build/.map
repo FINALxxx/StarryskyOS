@@ -1,0 +1,1514 @@
+
+Discarded input sections
+
+ .debug_line    0x00000000      0x163 /tmp/cciuMrOc.o
+ .debug_line_str
+                0x00000000       0x22 /tmp/cciuMrOc.o
+ .debug_info    0x00000000       0x25 /tmp/cciuMrOc.o
+ .debug_abbrev  0x00000000       0x14 /tmp/cciuMrOc.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cciuMrOc.o
+ .debug_str     0x00000000       0x2e /tmp/cciuMrOc.o
+ .debug_line    0x00000000       0x7a /tmp/ccollpQt.o
+ .debug_line_str
+                0x00000000       0x23 /tmp/ccollpQt.o
+ .debug_info    0x00000000       0x31 /tmp/ccollpQt.o
+ .debug_abbrev  0x00000000       0x28 /tmp/ccollpQt.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccollpQt.o
+ .debug_str     0x00000000       0x38 /tmp/ccollpQt.o
+ .debug_line    0x00000000      0x152 /tmp/ccN08U6V.o
+ .debug_line_str
+                0x00000000       0x20 /tmp/ccN08U6V.o
+ .debug_info    0x00000000       0x54 /tmp/ccN08U6V.o
+ .debug_abbrev  0x00000000       0x28 /tmp/ccN08U6V.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccN08U6V.o
+ .debug_str     0x00000000       0x52 /tmp/ccN08U6V.o
+ .debug_info    0x00000000      0x446 /tmp/ccdmYKye.o
+ .debug_abbrev  0x00000000      0x10d /tmp/ccdmYKye.o
+ .debug_loclists
+                0x00000000      0x66a /tmp/ccdmYKye.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccdmYKye.o
+ .debug_line    0x00000000      0x514 /tmp/ccdmYKye.o
+ .debug_str     0x00000000      0x162 /tmp/ccdmYKye.o
+ .debug_line_str
+                0x00000000       0x9d /tmp/ccdmYKye.o
+ .debug_frame   0x00000000       0xb0 /tmp/ccdmYKye.o
+ .debug_info    0x00000000      0x1fa /tmp/cc39IcW8.o
+ .debug_abbrev  0x00000000      0x11a /tmp/cc39IcW8.o
+ .debug_loclists
+                0x00000000       0x3b /tmp/cc39IcW8.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cc39IcW8.o
+ .debug_line    0x00000000      0x28f /tmp/cc39IcW8.o
+ .debug_str     0x00000000      0x1ea /tmp/cc39IcW8.o
+ .debug_line_str
+                0x00000000       0xb6 /tmp/cc39IcW8.o
+ .debug_frame   0x00000000       0x98 /tmp/cc39IcW8.o
+ .debug_info    0x00000000      0x203 /tmp/ccAkW0ik.o
+ .debug_abbrev  0x00000000       0xf5 /tmp/ccAkW0ik.o
+ .debug_loclists
+                0x00000000       0x7a /tmp/ccAkW0ik.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccAkW0ik.o
+ .debug_line    0x00000000      0x1a3 /tmp/ccAkW0ik.o
+ .debug_str     0x00000000      0x189 /tmp/ccAkW0ik.o
+ .debug_line_str
+                0x00000000       0xaa /tmp/ccAkW0ik.o
+ .debug_frame   0x00000000       0x50 /tmp/ccAkW0ik.o
+ .debug_info    0x00000000      0x234 /tmp/cctY8Ymg.o
+ .debug_abbrev  0x00000000       0xb6 /tmp/cctY8Ymg.o
+ .debug_loclists
+                0x00000000      0x129 /tmp/cctY8Ymg.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cctY8Ymg.o
+ .debug_line    0x00000000      0x29a /tmp/cctY8Ymg.o
+ .debug_str     0x00000000      0x149 /tmp/cctY8Ymg.o
+ .debug_line_str
+                0x00000000       0x9f /tmp/cctY8Ymg.o
+ .debug_frame   0x00000000       0x70 /tmp/cctY8Ymg.o
+ .debug_info    0x00000000       0x80 /tmp/cc2wHJfI.o
+ .debug_abbrev  0x00000000       0x6c /tmp/cc2wHJfI.o
+ .debug_loclists
+                0x00000000       0x41 /tmp/cc2wHJfI.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cc2wHJfI.o
+ .debug_line    0x00000000       0xae /tmp/cc2wHJfI.o
+ .debug_str     0x00000000       0x6f /tmp/cc2wHJfI.o
+ .debug_line_str
+                0x00000000       0x34 /tmp/cc2wHJfI.o
+ .debug_frame   0x00000000       0x20 /tmp/cc2wHJfI.o
+ .debug_info    0x00000000      0x115 /tmp/ccjeqp5Z.o
+ .debug_abbrev  0x00000000       0xd3 /tmp/ccjeqp5Z.o
+ .debug_loclists
+                0x00000000       0x7d /tmp/ccjeqp5Z.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccjeqp5Z.o
+ .debug_line    0x00000000       0xfe /tmp/ccjeqp5Z.o
+ .debug_str     0x00000000      0x10b /tmp/ccjeqp5Z.o
+ .debug_line_str
+                0x00000000       0xa3 /tmp/ccjeqp5Z.o
+ .debug_frame   0x00000000       0x20 /tmp/ccjeqp5Z.o
+ .debug_info    0x00000000      0x9b1 /tmp/ccaD31mv.o
+ .debug_abbrev  0x00000000      0x26f /tmp/ccaD31mv.o
+ .debug_loclists
+                0x00000000      0xf10 /tmp/ccaD31mv.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccaD31mv.o
+ .debug_rnglists
+                0x00000000       0x68 /tmp/ccaD31mv.o
+ .debug_line    0x00000000     0x113b /tmp/ccaD31mv.o
+ .debug_str     0x00000000      0x1e1 /tmp/ccaD31mv.o
+ .debug_line_str
+                0x00000000       0xb3 /tmp/ccaD31mv.o
+ .debug_frame   0x00000000      0x12c /tmp/ccaD31mv.o
+ .debug_info    0x00000000      0x15f /tmp/cc6AAVCF.o
+ .debug_abbrev  0x00000000      0x11e /tmp/cc6AAVCF.o
+ .debug_loclists
+                0x00000000       0x34 /tmp/cc6AAVCF.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cc6AAVCF.o
+ .debug_rnglists
+                0x00000000       0x13 /tmp/cc6AAVCF.o
+ .debug_line    0x00000000      0x13a /tmp/cc6AAVCF.o
+ .debug_str     0x00000000      0x148 /tmp/cc6AAVCF.o
+ .debug_line_str
+                0x00000000       0xa5 /tmp/cc6AAVCF.o
+ .debug_frame   0x00000000       0x50 /tmp/cc6AAVCF.o
+ .debug_info    0x00000000     0x136a /tmp/ccDZA7Dg.o
+ .debug_abbrev  0x00000000      0x338 /tmp/ccDZA7Dg.o
+ .debug_loclists
+                0x00000000     0x160b /tmp/ccDZA7Dg.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccDZA7Dg.o
+ .debug_rnglists
+                0x00000000       0x92 /tmp/ccDZA7Dg.o
+ .debug_line    0x00000000     0x199d /tmp/ccDZA7Dg.o
+ .debug_str     0x00000000      0x4a9 /tmp/ccDZA7Dg.o
+ .debug_line_str
+                0x00000000       0xa8 /tmp/ccDZA7Dg.o
+ .debug_frame   0x00000000      0x240 /tmp/ccDZA7Dg.o
+ .debug_info    0x00000000      0x52f /tmp/ccOEElEj.o
+ .debug_abbrev  0x00000000      0x229 /tmp/ccOEElEj.o
+ .debug_loclists
+                0x00000000      0x345 /tmp/ccOEElEj.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccOEElEj.o
+ .debug_rnglists
+                0x00000000       0x5f /tmp/ccOEElEj.o
+ .debug_line    0x00000000      0x67e /tmp/ccOEElEj.o
+ .debug_str     0x00000000      0x29c /tmp/ccOEElEj.o
+ .debug_line_str
+                0x00000000       0xaa /tmp/ccOEElEj.o
+ .debug_frame   0x00000000       0xc8 /tmp/ccOEElEj.o
+ .debug_info    0x00000000      0x3b8 /tmp/ccxv5n1w.o
+ .debug_abbrev  0x00000000      0x194 /tmp/ccxv5n1w.o
+ .debug_loclists
+                0x00000000      0x119 /tmp/ccxv5n1w.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccxv5n1w.o
+ .debug_line    0x00000000      0x279 /tmp/ccxv5n1w.o
+ .debug_str     0x00000000      0x242 /tmp/ccxv5n1w.o
+ .debug_line_str
+                0x00000000       0xd7 /tmp/ccxv5n1w.o
+ .debug_frame   0x00000000       0x90 /tmp/ccxv5n1w.o
+ .debug_info    0x00000000      0x202 /tmp/ccrMSayt.o
+ .debug_abbrev  0x00000000      0x154 /tmp/ccrMSayt.o
+ .debug_loclists
+                0x00000000       0x30 /tmp/ccrMSayt.o
+ .debug_aranges
+                0x00000000       0x28 /tmp/ccrMSayt.o
+ .debug_rnglists
+                0x00000000       0x19 /tmp/ccrMSayt.o
+ .debug_line    0x00000000      0x100 /tmp/ccrMSayt.o
+ .debug_str     0x00000000      0x17d /tmp/ccrMSayt.o
+ .debug_line_str
+                0x00000000       0x8a /tmp/ccrMSayt.o
+ .debug_frame   0x00000000       0x38 /tmp/ccrMSayt.o
+ .debug_info    0x00000000      0x6e8 /tmp/ccPotlrU.o
+ .debug_abbrev  0x00000000      0x24f /tmp/ccPotlrU.o
+ .debug_loclists
+                0x00000000      0x355 /tmp/ccPotlrU.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccPotlrU.o
+ .debug_rnglists
+                0x00000000       0x1a /tmp/ccPotlrU.o
+ .debug_line    0x00000000      0x324 /tmp/ccPotlrU.o
+ .debug_str     0x00000000      0x414 /tmp/ccPotlrU.o
+ .debug_line_str
+                0x00000000      0x103 /tmp/ccPotlrU.o
+ .debug_frame   0x00000000       0x44 /tmp/ccPotlrU.o
+ .debug_info    0x00000000     0x22ca /tmp/cc3RSzih.o
+ .debug_abbrev  0x00000000      0x555 /tmp/cc3RSzih.o
+ .debug_loclists
+                0x00000000     0x1714 /tmp/cc3RSzih.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cc3RSzih.o
+ .debug_rnglists
+                0x00000000       0xd7 /tmp/cc3RSzih.o
+ .debug_line    0x00000000     0x1aa5 /tmp/cc3RSzih.o
+ .debug_str     0x00000000      0x6a2 /tmp/cc3RSzih.o
+ .debug_line_str
+                0x00000000      0x120 /tmp/cc3RSzih.o
+ .debug_frame   0x00000000      0x2cc /tmp/cc3RSzih.o
+ .debug_info    0x00000000      0xcfd /tmp/ccNHew1d.o
+ .debug_abbrev  0x00000000      0x31a /tmp/ccNHew1d.o
+ .debug_loclists
+                0x00000000      0x555 /tmp/ccNHew1d.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccNHew1d.o
+ .debug_rnglists
+                0x00000000       0x41 /tmp/ccNHew1d.o
+ .debug_line    0x00000000      0xa81 /tmp/ccNHew1d.o
+ .debug_str     0x00000000      0x435 /tmp/ccNHew1d.o
+ .debug_line_str
+                0x00000000      0x119 /tmp/ccNHew1d.o
+ .debug_frame   0x00000000       0x80 /tmp/ccNHew1d.o
+ .debug_info    0x00000000      0xc67 /tmp/ccGyoZZe.o
+ .debug_abbrev  0x00000000      0x3a7 /tmp/ccGyoZZe.o
+ .debug_loclists
+                0x00000000      0x7bc /tmp/ccGyoZZe.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccGyoZZe.o
+ .debug_rnglists
+                0x00000000       0xc2 /tmp/ccGyoZZe.o
+ .debug_line    0x00000000      0x942 /tmp/ccGyoZZe.o
+ .debug_str     0x00000000      0x4fa /tmp/ccGyoZZe.o
+ .debug_line_str
+                0x00000000      0x11c /tmp/ccGyoZZe.o
+ .debug_frame   0x00000000      0x134 /tmp/ccGyoZZe.o
+ .debug_info    0x00000000      0xf0d /tmp/ccQ5uOo7.o
+ .debug_abbrev  0x00000000      0x332 /tmp/ccQ5uOo7.o
+ .debug_loclists
+                0x00000000      0x33f /tmp/ccQ5uOo7.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccQ5uOo7.o
+ .debug_rnglists
+                0x00000000       0x1c /tmp/ccQ5uOo7.o
+ .debug_line    0x00000000      0x665 /tmp/ccQ5uOo7.o
+ .debug_str     0x00000000      0x53e /tmp/ccQ5uOo7.o
+ .debug_line_str
+                0x00000000      0x15b /tmp/ccQ5uOo7.o
+ .debug_frame   0x00000000      0x170 /tmp/ccQ5uOo7.o
+ .debug_info    0x00000000      0x823 /tmp/ccHc2psI.o
+ .debug_abbrev  0x00000000      0x248 /tmp/ccHc2psI.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccHc2psI.o
+ .debug_line    0x00000000      0x175 /tmp/ccHc2psI.o
+ .debug_str     0x00000000      0x40b /tmp/ccHc2psI.o
+ .debug_line_str
+                0x00000000      0x13a /tmp/ccHc2psI.o
+ .debug_frame   0x00000000       0x30 /tmp/ccHc2psI.o
+ .debug_info    0x00000000      0x842 /tmp/ccgQL7zl.o
+ .debug_abbrev  0x00000000      0x268 /tmp/ccgQL7zl.o
+ .debug_loclists
+                0x00000000      0x154 /tmp/ccgQL7zl.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccgQL7zl.o
+ .debug_line    0x00000000      0x26a /tmp/ccgQL7zl.o
+ .debug_str     0x00000000      0x3d6 /tmp/ccgQL7zl.o
+ .debug_line_str
+                0x00000000       0xf0 /tmp/ccgQL7zl.o
+ .debug_frame   0x00000000       0xb4 /tmp/ccgQL7zl.o
+ .debug_info    0x00000000      0x75c /tmp/cccqTRQa.o
+ .debug_abbrev  0x00000000      0x219 /tmp/cccqTRQa.o
+ .debug_loclists
+                0x00000000       0xb4 /tmp/cccqTRQa.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cccqTRQa.o
+ .debug_line    0x00000000       0x95 /tmp/cccqTRQa.o
+ .debug_str     0x00000000      0x488 /tmp/cccqTRQa.o
+ .debug_line_str
+                0x00000000      0x10d /tmp/cccqTRQa.o
+ .debug_frame   0x00000000       0x2c /tmp/cccqTRQa.o
+ .debug_info    0x00000000     0x2d11 /tmp/ccHGrKfK.o
+ .debug_abbrev  0x00000000      0x5b7 /tmp/ccHGrKfK.o
+ .debug_loclists
+                0x00000000     0x1df7 /tmp/ccHGrKfK.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccHGrKfK.o
+ .debug_rnglists
+                0x00000000      0x2c0 /tmp/ccHGrKfK.o
+ .debug_line    0x00000000     0x347f /tmp/ccHGrKfK.o
+ .debug_str     0x00000000      0xa65 /tmp/ccHGrKfK.o
+ .debug_line_str
+                0x00000000      0x118 /tmp/ccHGrKfK.o
+ .debug_frame   0x00000000      0x810 /tmp/ccHGrKfK.o
+ .debug_info    0x00000000      0x6a7 /tmp/ccaWHjoc.o
+ .debug_abbrev  0x00000000      0x1f7 /tmp/ccaWHjoc.o
+ .debug_loclists
+                0x00000000       0xe7 /tmp/ccaWHjoc.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccaWHjoc.o
+ .debug_line    0x00000000      0x13f /tmp/ccaWHjoc.o
+ .debug_str     0x00000000      0x3bd /tmp/ccaWHjoc.o
+ .debug_line_str
+                0x00000000      0x109 /tmp/ccaWHjoc.o
+ .debug_frame   0x00000000       0x58 /tmp/ccaWHjoc.o
+ .debug_info    0x00000000      0x5eb /tmp/cc9ZhUaG.o
+ .debug_abbrev  0x00000000      0x1dc /tmp/cc9ZhUaG.o
+ .debug_loclists
+                0x00000000       0xe4 /tmp/cc9ZhUaG.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cc9ZhUaG.o
+ .debug_rnglists
+                0x00000000       0x66 /tmp/cc9ZhUaG.o
+ .debug_line    0x00000000      0x30e /tmp/cc9ZhUaG.o
+ .debug_str     0x00000000      0x4dc /tmp/cc9ZhUaG.o
+ .debug_line_str
+                0x00000000       0xf0 /tmp/cc9ZhUaG.o
+ .debug_frame   0x00000000       0x9c /tmp/cc9ZhUaG.o
+ .debug_info    0x00000000      0x3ef /tmp/cc1uLT7X.o
+ .debug_abbrev  0x00000000      0x161 /tmp/cc1uLT7X.o
+ .debug_loclists
+                0x00000000      0x469 /tmp/cc1uLT7X.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cc1uLT7X.o
+ .debug_rnglists
+                0x00000000       0x16 /tmp/cc1uLT7X.o
+ .debug_line    0x00000000      0x5d8 /tmp/cc1uLT7X.o
+ .debug_str     0x00000000      0x16b /tmp/cc1uLT7X.o
+ .debug_line_str
+                0x00000000       0xd3 /tmp/cc1uLT7X.o
+ .debug_frame   0x00000000       0x40 /tmp/cc1uLT7X.o
+ .debug_info    0x00000000       0x71 /tmp/ccBsCXAL.o
+ .debug_abbrev  0x00000000       0x2c /tmp/ccBsCXAL.o
+ .debug_aranges
+                0x00000000       0x18 /tmp/ccBsCXAL.o
+ .debug_line    0x00000000       0x44 /tmp/ccBsCXAL.o
+ .debug_str     0x00000000       0xe2 /tmp/ccBsCXAL.o
+ .debug_line_str
+                0x00000000       0x4a /tmp/ccBsCXAL.o
+ .debug_info    0x00000000      0x94c /tmp/ccs9osJP.o
+ .debug_abbrev  0x00000000      0x247 /tmp/ccs9osJP.o
+ .debug_loclists
+                0x00000000      0x374 /tmp/ccs9osJP.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccs9osJP.o
+ .debug_line    0x00000000      0x3fb /tmp/ccs9osJP.o
+ .debug_str     0x00000000      0x443 /tmp/ccs9osJP.o
+ .debug_line_str
+                0x00000000      0x134 /tmp/ccs9osJP.o
+ .debug_frame   0x00000000       0xd8 /tmp/ccs9osJP.o
+ .debug_info    0x00000000     0x553a /tmp/ccRnLhpb.o
+ .debug_abbrev  0x00000000      0x470 /tmp/ccRnLhpb.o
+ .debug_loclists
+                0x00000000     0x55b7 /tmp/ccRnLhpb.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccRnLhpb.o
+ .debug_rnglists
+                0x00000000      0x30d /tmp/ccRnLhpb.o
+ .debug_line    0x00000000     0x8fae /tmp/ccRnLhpb.o
+ .debug_str     0x00000000      0x8fb /tmp/ccRnLhpb.o
+ .debug_line_str
+                0x00000000      0x10f /tmp/ccRnLhpb.o
+ .debug_frame   0x00000000      0xa18 /tmp/ccRnLhpb.o
+ .debug_info    0x00000000      0x5c8 /tmp/cciionM9.o
+ .debug_abbrev  0x00000000      0x219 /tmp/cciionM9.o
+ .debug_loclists
+                0x00000000       0x3c /tmp/cciionM9.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cciionM9.o
+ .debug_rnglists
+                0x00000000       0x16 /tmp/cciionM9.o
+ .debug_line    0x00000000      0x1b8 /tmp/cciionM9.o
+ .debug_str     0x00000000      0x3ba /tmp/cciionM9.o
+ .debug_line_str
+                0x00000000      0x106 /tmp/cciionM9.o
+ .debug_frame   0x00000000       0x4c /tmp/cciionM9.o
+ .debug_info    0x00000000      0x563 /tmp/ccUq8V16.o
+ .debug_abbrev  0x00000000      0x22a /tmp/ccUq8V16.o
+ .debug_loclists
+                0x00000000      0x169 /tmp/ccUq8V16.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccUq8V16.o
+ .debug_rnglists
+                0x00000000       0x2d /tmp/ccUq8V16.o
+ .debug_line    0x00000000      0x580 /tmp/ccUq8V16.o
+ .debug_str     0x00000000      0x235 /tmp/ccUq8V16.o
+ .debug_line_str
+                0x00000000      0x11a /tmp/ccUq8V16.o
+ .debug_frame   0x00000000       0xd4 /tmp/ccUq8V16.o
+ .debug_info    0x00000000      0x2a7 /tmp/ccNcYOhD.o
+ .debug_abbrev  0x00000000      0x125 /tmp/ccNcYOhD.o
+ .debug_loclists
+                0x00000000       0xd6 /tmp/ccNcYOhD.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccNcYOhD.o
+ .debug_line    0x00000000       0xcf /tmp/ccNcYOhD.o
+ .debug_str     0x00000000      0x17e /tmp/ccNcYOhD.o
+ .debug_line_str
+                0x00000000      0x10b /tmp/ccNcYOhD.o
+ .debug_frame   0x00000000       0x40 /tmp/ccNcYOhD.o
+ .debug_info    0x00000000      0x27d /tmp/cccT9S3b.o
+ .debug_abbrev  0x00000000      0x150 /tmp/cccT9S3b.o
+ .debug_loclists
+                0x00000000       0x94 /tmp/cccT9S3b.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/cccT9S3b.o
+ .debug_line    0x00000000      0x13a /tmp/cccT9S3b.o
+ .debug_str     0x00000000      0x1d0 /tmp/cccT9S3b.o
+ .debug_line_str
+                0x00000000       0xdd /tmp/cccT9S3b.o
+ .debug_frame   0x00000000       0x54 /tmp/cccT9S3b.o
+ .debug_info    0x00000000     0x13f6 /tmp/ccSkcqra.o
+ .debug_abbrev  0x00000000      0x50e /tmp/ccSkcqra.o
+ .debug_loclists
+                0x00000000      0x5ac /tmp/ccSkcqra.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccSkcqra.o
+ .debug_rnglists
+                0x00000000      0x132 /tmp/ccSkcqra.o
+ .debug_line    0x00000000      0xded /tmp/ccSkcqra.o
+ .debug_str     0x00000000      0x818 /tmp/ccSkcqra.o
+ .debug_line_str
+                0x00000000      0x161 /tmp/ccSkcqra.o
+ .debug_frame   0x00000000       0xf0 /tmp/ccSkcqra.o
+ .debug_info    0x00000000      0x8c2 /tmp/ccydPWHI.o
+ .debug_abbrev  0x00000000      0x256 /tmp/ccydPWHI.o
+ .debug_loclists
+                0x00000000      0x3ea /tmp/ccydPWHI.o
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccydPWHI.o
+ .debug_rnglists
+                0x00000000       0xeb /tmp/ccydPWHI.o
+ .debug_line    0x00000000      0x62d /tmp/ccydPWHI.o
+ .debug_str     0x00000000      0x295 /tmp/ccydPWHI.o
+ .debug_line_str
+                0x00000000      0x11e /tmp/ccydPWHI.o
+ .debug_frame   0x00000000       0x64 /tmp/ccydPWHI.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x01000000         axrl!w
+RAM              0x30000000         0x00020000         axw!rl
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x00000000    0x2221c
+                0x00000000                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000000       0xd8 /tmp/cciuMrOc.o
+ .text          0x000000d8       0x24 /tmp/ccollpQt.o
+                0x000000d8                __muldi3
+ .text          0x000000fc       0xb4 /tmp/ccN08U6V.o
+                0x000000fc                __divsi3
+                0x00000104                __udivsi3
+                0x0000014c                __umodsi3
+                0x00000180                __modsi3
+ .text          0x000001b0      0x1ec /tmp/ccdmYKye.o
+                0x000001b0                memcpy
+                0x000001d4                memset
+                0x000001f0                strlen
+                0x00000210                memcmp
+                0x00000240                strchr
+                0x0000025c                strcmp
+                0x00000288                strncpy
+                0x000002e8                strcpy
+                0x00000304                strncmp
+                0x0000033c                memmove
+ .text          0x0000039c      0x14c /tmp/cc39IcW8.o
+                0x0000039c                hal_hp_uart_init
+                0x000003d4                hal_hp_uart_config
+                0x0000042c                hal_hp_uart_send
+                0x0000044c                hal_hp_uart_putstr
+                0x00000480                hal_hp_uart_recv
+                0x000004a4                hal_hp_uart_recv_str
+ .text          0x000004e8       0xa0 /tmp/ccAkW0ik.o
+                0x000004e8                pwm_hal_init
+                0x00000508                pwm_hal_set_compare
+                0x0000055c                pwm_hal_enable
+                0x00000574                pwm_hal_disable
+ .text          0x00000588      0x108 /tmp/cctY8Ymg.o
+                0x00000588                hal_delay_us
+                0x00000608                hal_delay_ms
+                0x00000614                delay_ms
+                0x00000620                hal_delay_s
+                0x0000062c                hal_sys_tick_init
+                0x00000668                hal_get_sys_tick
+ .text          0x00000690       0x28 /tmp/cc2wHJfI.o
+                0x00000690                __mulsi3
+ .text          0x000006b8       0x48 /tmp/ccjeqp5Z.o
+                0x000006b8                __lshrdi3
+ .text          0x00000700      0x8ec /tmp/ccaD31mv.o
+                0x00000908                vprintf
+                0x00000b58                vsnprintf
+                0x00000f7c                snprintf
+                0x00000fb0                printf
+ .text          0x00000fec       0x58 /tmp/cc6AAVCF.o
+                0x00000fec                hal_sys_uart_init
+                0x00000ffc                hal_sys_putchar
+                0x00001008                hal_sys_putstr
+                0x00001028                hal_sys_getchar
+ .text          0x00001044      0xba8 /tmp/ccDZA7Dg.o
+                0x00001094                hal_qspi_init
+                0x000010c8                hal_qspi_deinit
+                0x000010e4                hal_qspi_write_8
+                0x00001128                hal_qspi_write_8_cs
+                0x00001184                hal_qspi_write_16
+                0x000011c0                hal_qspi_write_16_cs
+                0x0000121c                hal_qspi_write_32
+                0x00001254                hal_qspi_write_32_cs
+                0x000012ac                hal_qspi_write_32x2
+                0x000012e8                hal_qspi_write_32x2_cs
+                0x00001344                hal_qspi_write_32x8
+                0x0000139c                hal_qspi_write_32x8_cs
+                0x00001414                hal_qspi_write_32x16
+                0x000014ac                hal_qspi_write_32x16_cs
+                0x00001564                hal_qspi_write_32x32
+                0x00001680                hal_qspi_write_32x32_cs
+                0x000017bc                hal_qspi_send_cmd
+                0x0000182c                hal_qspi_write
+                0x000019dc                hal_qspi_read
+ .text          0x00001bec      0x2dc /tmp/ccOEElEj.o
+                0x00001c48                hal_i2c_init
+                0x00001c74                hal_i2c_deinit
+                0x00001c8c                hal_i2c_write_nbyte
+                0x00001d94                hal_i2c_read_nbyte
+ .text          0x00001ec8      0x128 /tmp/ccxv5n1w.o
+                0x00001ec8                gpio_hal_input_enable
+                0x00001ee4                gpio_hal_output_enable
+                0x00001f04                gpio_hal_set_level
+                0x00001f34                gpio_hal_get_level
+                0x00001f70                gpio_hal_read_update
+                0x00001f8c                gpio_hal_write_update
+                0x00001fb8                gpio_hal_set_fcfg
+                0x00001fd4                gpio_hal_set_mux
+ .text          0x00001ff0       0x10 /tmp/ccrMSayt.o
+                0x00001ff0                easy_print
+ .text          0x00002000      0x128 /tmp/ccPotlrU.o
+                0x000020c0                sfud_spi_port_init
+ .text          0x00002128     0x12f4 /tmp/cc3RSzih.o
+                0x0000214c                sfud_get_device
+                0x00002164                sfud_get_device_num
+                0x0000216c                sfud_get_device_table
+                0x00002178                sfud_read_status
+                0x000022a4                sfud_read
+                0x0000251c                sfud_chip_erase
+                0x00002680                sfud_erase
+                0x00002aec                sfud_write
+                0x00002d94                sfud_erase_write
+                0x00002de8                sfud_write_status
+                0x00002ee0                sfud_device_init
+                0x000033b8                sfud_init
+ .text          0x0000341c      0x760 /tmp/ccNHew1d.o
+                0x00003514                sfud_read_sfdp
+                0x00003af8                sfud_sfdp_get_suitable_eraser
+ .text          0x00003b7c      0x594 /tmp/ccGyoZZe.o
+                0x00003bf0                shellExtParsePara
+                0x00003ea4                shellExtRun
+ .text          0x00004110      0x594 /tmp/ccQ5uOo7.o
+                0x00004110                exec_func
+                0x000041c8                set_fnode
+                0x000041d4                create_shell_env_varible
+                0x00004234                shellRead
+                0x00004290                shellWrite
+                0x000042e4                getcwd
+                0x0000439c                chdir
+                0x00004450                listdir
+                0x000045c0                createfile
+ .text          0x000046a4       0xf0 /tmp/ccHc2psI.o
+                0x000046a4                load_shell
+ .text          0x00004794      0x184 /tmp/ccgQL7zl.o
+                0x00004794                shellCD
+                0x0000483c                shellLS
+                0x000048a0                shellTOUCH
+                0x000048fc                shellFsInit
+ .text          0x00004918       0x20 /tmp/cccqTRQa.o
+                0x00004918                agencyshellRun
+ .text          0x00004938     0x2010 /tmp/ccHGrKfK.o
+                0x00004994                shellRemove
+                0x000049d0                shellGetCurrent
+                0x00004a00                shellWriteString
+                0x00004adc                shellPrint
+                0x00004b50                shellCheckPermission
+                0x00004bb8                shellToHex
+                0x00004c78                shellToDec
+                0x00004dcc                shellListItem
+                0x00004f8c                shellListCommand
+                0x00005028                shellListVar
+                0x000050c8                shellListUser
+                0x00005168                shellListKey
+                0x00005214                shellListAll
+                0x00005218                shellDeleteCommandLine
+                0x0000526c                shellClearCommandLine
+                0x000052c8                shellInsertByte
+                0x00005478                shellDeleteByte
+                0x000055c8                shellSplit
+                0x000056f8                shellSeekCommand
+                0x00005804                shellGetVarValue
+                0x000059a8                shellSetVarValue
+                0x00005a88                shellSetVar
+                0x00005b44                shellSetUser
+                0x00005bf8                shellInit
+                0x00005cd8                shellRunCommand
+                0x00005e24                shellNormalInput
+                0x00005e34                shellExec
+                0x00005fe0                shellUp
+                0x0000609c                shellDown
+                0x0000613c                shellRight
+                0x00006168                shellLeft
+                0x000061ac                shellTab
+                0x00006410                shellBackspace
+                0x00006418                shellDelete
+                0x00006420                shellEnter
+                0x00006440                shellHelp
+                0x0000652c                shellHandler
+                0x000066ec                shellTask
+                0x00006730                shellUsers
+                0x00006758                shellCmds
+                0x00006780                shellVars
+                0x000067a8                shellKeys
+                0x000067d0                shellClear
+                0x00006800                shellRun
+                0x000068a4                shellExecute
+ .text          0x00006948       0x84 /tmp/ccaWHjoc.o
+                0x00006948                shellCompanionAdd
+                0x00006984                shellCompanionDel
+                0x000069b4                shellCompanionGet
+ .text          0x000069cc      0x184 /tmp/cc9ZhUaG.o
+                0x000069cc                MYSPI_Init
+                0x00006a30                MYSPI_Start
+                0x00006a54                MYSPI_Stop
+                0x00006a78                MYSPI_SwapByte
+ .text          0x00006b50      0x270 /tmp/cc1uLT7X.o
+                0x00006b50                ff_uni2oem
+                0x00006c38                ff_oem2uni
+                0x00006cd0                ff_wtoupper
+ .text          0x00006dc0        0x0 /tmp/ccBsCXAL.o
+ .text          0x00006dc0      0x2bc /tmp/ccs9osJP.o
+                0x00006dc0                disk_status
+                0x00006e48                disk_initialize
+                0x00006ed4                disk_read
+                0x00006f80                disk_write
+                0x0000702c                disk_ioctl
+ .text          0x0000707c     0x4aec /tmp/ccRnLhpb.o
+                0x00009310                f_mount
+                0x000093a0                f_open
+                0x00009684                f_read
+                0x000098d0                f_write
+                0x00009c4c                f_sync
+                0x00009d50                f_close
+                0x00009d94                f_chdrive
+                0x00009dd0                f_chdir
+                0x00009e70                f_getcwd
+                0x0000a090                f_lseek
+                0x0000a2c8                f_opendir
+                0x0000a37c                f_closedir
+                0x0000a3ac                f_readdir
+                0x0000a454                f_stat
+                0x0000a4d8                f_getfree
+                0x0000a680                f_truncate
+                0x0000a7a8                f_unlink
+                0x0000a8a8                f_mkdir
+                0x0000aa90                f_rename
+                0x0000ac18                f_mkfs
+                0x0000b5d8                f_gets
+                0x0000b684                f_putc
+                0x0000b6d8                f_puts
+                0x0000b738                f_printf
+ .text          0x0000bb68      0x160 /tmp/cciionM9.o
+                0x0000bb68                load_filesystem
+ .text          0x0000bcc8      0x3d0 /tmp/ccUq8V16.o
+                0x0000bcc8                create_task
+                0x0000bd7c                delete_task
+                0x0000bdf8                suspend_task
+                0x0000be40                resume_task
+                0x0000bf28                task_scheduler
+ .text          0x0000c098       0x28 /tmp/ccNcYOhD.o
+                0x0000c098                ctx_init
+                0x0000c0a8                enter_load_from_ctx
+                0x0000c0b8                exit_save_to_ctx
+ .text          0x0000c0c0       0xb8 /tmp/cccT9S3b.o
+                0x0000c0c0                log_init
+                0x0000c0cc                log_close
+                0x0000c0d0                log_print
+ .text          0x0000c178      0x850 /tmp/ccSkcqra.o
+                0x0000c1c0                editor_line_length
+                0x0000c228                editor_build_line_offsets
+                0x0000c3b0                editor_construct_path
+                0x0000c480                editCmd
+ .text          0x0000c9c8      0x340 /tmp/ccydPWHI.o
+                0x0000c9c8                editor_render
+ *(.text*)
+ .text.startup  0x0000cd08       0x48 /tmp/ccrMSayt.o
+                0x0000cd08                main
+ *(.rodata)
+ .rodata        0x0000cd50       0xb0 /tmp/ccaD31mv.o
+ .rodata        0x0000ce00        0xc /tmp/ccrMSayt.o
+ .rodata        0x0000ce0c      0x310 /tmp/cc3RSzih.o
+ .rodata        0x0000d11c       0x3e /tmp/ccNHew1d.o
+ *fill*         0x0000d15a        0x2 
+ .rodata        0x0000d15c       0x20 /tmp/ccGyoZZe.o
+ .rodata        0x0000d17c       0xf0 /tmp/ccQ5uOo7.o
+ .rodata        0x0000d26c      0x1f0 /tmp/cccqTRQa.o
+                0x0000d26c                shellCommandList
+ .rodata        0x0000d45c       0x30 /tmp/ccHGrKfK.o
+ .rodata        0x0000d48c    0x1318e /tmp/cc1uLT7X.o
+ *fill*         0x0002061a        0x2 
+ .rodata        0x0002061c       0x14 /tmp/ccs9osJP.o
+ .rodata        0x00020630       0x3e /tmp/ccRnLhpb.o
+ *fill*         0x0002066e        0x2 
+ .rodata        0x00020670       0x10 /tmp/cciionM9.o
+ .rodata        0x00020680       0x28 /tmp/cccT9S3b.o
+ .rodata        0x000206a8        0xc /tmp/ccSkcqra.o
+ *(.rodata*)
+ .rodata.str1.4
+                0x000206b4     0x1b5b /tmp/ccaD31mv.o
+                                 0x2f (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccxv5n1w.o
+                                 0x6a (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccrMSayt.o
+                                 0x39 (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/cc3RSzih.o
+                                0x5dd (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccNHew1d.o
+                                0x726 (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccGyoZZe.o
+                                 0x54 (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccHc2psI.o
+                                 0x6b (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccgQL7zl.o
+                                 0x1e (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/cccqTRQa.o
+                                0x21f (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccHGrKfK.o
+                                0x5b6 (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccs9osJP.o
+                                0x11e (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccRnLhpb.o
+                                 0x88 (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/cciionM9.o
+                                0x11c (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccUq8V16.o
+                                 0x7c (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/cccT9S3b.o
+                                 0x6e (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccSkcqra.o
+                                 0xc2 (size before relaxing)
+ .rodata.str1.4
+                0x0002220f        0x0 /tmp/ccydPWHI.o
+                                 0xbf (size before relaxing)
+ *(.srodata)
+ *fill*         0x0002220f        0x1 
+ .srodata       0x00022210        0x7 /tmp/ccGyoZZe.o
+ *fill*         0x00022217        0x1 
+ .srodata       0x00022218        0x2 /tmp/cccqTRQa.o
+                0x00022218                shellCommandCount
+ *(.srodata*)
+                0x0002221c                        . = ALIGN (0x4)
+ *fill*         0x0002221a        0x2 
+                0x0002221c                        _etext = .
+                0x0002221c                        _sidata = _etext
+
+.rela.dyn       0x0002221c        0x0
+ .rela.text     0x0002221c        0x0 /tmp/cciuMrOc.o
+
+.data           0x30000000       0x7c load address 0x0002221c
+                0x30000000                        . = ALIGN (0x4)
+                0x30000000                        _sdata = .
+                0x30000000                        _ram_start = .
+                0x30000000                        . = ALIGN (0x4)
+ *(.data)
+ .data          0x30000000        0x0 /tmp/cciuMrOc.o
+ .data          0x30000000        0x0 /tmp/ccollpQt.o
+ .data          0x30000000        0x0 /tmp/ccN08U6V.o
+ .data          0x30000000        0x0 /tmp/ccdmYKye.o
+ .data          0x30000000        0x0 /tmp/cc39IcW8.o
+ .data          0x30000000        0x0 /tmp/ccAkW0ik.o
+ .data          0x30000000        0x0 /tmp/cctY8Ymg.o
+ .data          0x30000000        0x0 /tmp/cc2wHJfI.o
+ .data          0x30000000        0x0 /tmp/ccjeqp5Z.o
+ .data          0x30000000        0x0 /tmp/ccaD31mv.o
+ .data          0x30000000        0x0 /tmp/cc6AAVCF.o
+ .data          0x30000000        0x0 /tmp/ccDZA7Dg.o
+ .data          0x30000000        0x0 /tmp/ccOEElEj.o
+ .data          0x30000000        0x0 /tmp/ccxv5n1w.o
+ .data          0x30000000        0x0 /tmp/ccrMSayt.o
+ .data          0x30000000        0x0 /tmp/ccPotlrU.o
+ .data          0x30000000       0x74 /tmp/cc3RSzih.o
+ .data          0x30000074        0x0 /tmp/ccNHew1d.o
+ .data          0x30000074        0x0 /tmp/ccGyoZZe.o
+ .data          0x30000074        0x0 /tmp/ccQ5uOo7.o
+ .data          0x30000074        0x0 /tmp/ccHc2psI.o
+ .data          0x30000074        0x0 /tmp/ccgQL7zl.o
+ .data          0x30000074        0x0 /tmp/cccqTRQa.o
+ .data          0x30000074        0x0 /tmp/ccHGrKfK.o
+ .data          0x30000074        0x0 /tmp/ccaWHjoc.o
+ .data          0x30000074        0x0 /tmp/cc9ZhUaG.o
+ .data          0x30000074        0x0 /tmp/cc1uLT7X.o
+ .data          0x30000074        0x0 /tmp/ccBsCXAL.o
+ .data          0x30000074        0x0 /tmp/ccs9osJP.o
+ .data          0x30000074        0x0 /tmp/ccRnLhpb.o
+ .data          0x30000074        0x0 /tmp/cciionM9.o
+ .data          0x30000074        0x0 /tmp/ccUq8V16.o
+ .data          0x30000074        0x0 /tmp/ccNcYOhD.o
+ .data          0x30000074        0x0 /tmp/cccT9S3b.o
+ .data          0x30000074        0x0 /tmp/ccSkcqra.o
+ .data          0x30000074        0x0 /tmp/ccydPWHI.o
+ *(.data*)
+ *(.sdata)
+ .sdata         0x30000074        0x2 /tmp/ccHGrKfK.o
+                0x30000074                pairedChars
+ *fill*         0x30000076        0x2 
+ .sdata         0x30000078        0x4 /tmp/cccT9S3b.o
+ *(.sdata*)
+                0x3000007c                        . = ALIGN (0x4)
+                0x3000007c                        _edata = .
+
+.bss            0x3000007c     0xf30c load address 0x00022298
+                0x3000007c                        . = ALIGN (0x4)
+                0x3000007c                        _sbss = .
+ *(.bss)
+ .bss           0x3000007c        0x0 /tmp/cciuMrOc.o
+ .bss           0x3000007c        0x0 /tmp/ccollpQt.o
+ .bss           0x3000007c        0x0 /tmp/ccN08U6V.o
+ .bss           0x3000007c        0x0 /tmp/ccdmYKye.o
+ .bss           0x3000007c        0x0 /tmp/cc39IcW8.o
+ .bss           0x3000007c        0x0 /tmp/ccAkW0ik.o
+ .bss           0x3000007c        0x0 /tmp/cctY8Ymg.o
+ .bss           0x3000007c        0x0 /tmp/cc2wHJfI.o
+ .bss           0x3000007c        0x0 /tmp/ccjeqp5Z.o
+ .bss           0x3000007c        0x0 /tmp/ccaD31mv.o
+ .bss           0x3000007c        0x0 /tmp/cc6AAVCF.o
+ .bss           0x3000007c        0x0 /tmp/ccDZA7Dg.o
+ .bss           0x3000007c        0x0 /tmp/ccOEElEj.o
+ .bss           0x3000007c        0x0 /tmp/ccxv5n1w.o
+ .bss           0x3000007c        0x0 /tmp/ccrMSayt.o
+ .bss           0x3000007c        0x0 /tmp/ccPotlrU.o
+ .bss           0x3000007c      0x105 /tmp/cc3RSzih.o
+ .bss           0x30000181        0x0 /tmp/ccNHew1d.o
+ .bss           0x30000181        0x0 /tmp/ccGyoZZe.o
+ *fill*         0x30000181        0x3 
+ .bss           0x30000184       0x80 /tmp/ccQ5uOo7.o
+                0x30000184                envString
+ .bss           0x30000204        0x0 /tmp/ccHc2psI.o
+ .bss           0x30000204        0x0 /tmp/ccgQL7zl.o
+ .bss           0x30000204        0x0 /tmp/cccqTRQa.o
+ .bss           0x30000204       0x1d /tmp/ccHGrKfK.o
+ *fill*         0x30000221        0x3 
+ .bss           0x30000224       0x18 /tmp/ccaWHjoc.o
+                0x30000224                shellfs
+ .bss           0x3000023c        0x0 /tmp/cc9ZhUaG.o
+ .bss           0x3000023c        0x0 /tmp/cc1uLT7X.o
+ .bss           0x3000023c        0x0 /tmp/ccBsCXAL.o
+ .bss           0x3000023c        0x0 /tmp/ccs9osJP.o
+ .bss           0x3000023c      0x200 /tmp/ccRnLhpb.o
+ .bss           0x3000043c     0x2038 /tmp/cciionM9.o
+                0x3000043c                work_buf
+                0x3000143c                fs_Flash
+ .bss           0x30002474      0xbc8 /tmp/ccUq8V16.o
+ .bss           0x3000303c        0x0 /tmp/ccNcYOhD.o
+ .bss           0x3000303c        0x0 /tmp/cccT9S3b.o
+ .bss           0x3000303c     0xc318 /tmp/ccSkcqra.o
+ .bss           0x3000f354        0x0 /tmp/ccydPWHI.o
+ *(.bss*)
+ *(.sbss)
+ .sbss          0x3000f354        0xc /tmp/ccxv5n1w.o
+ .sbss          0x3000f360       0x10 /tmp/ccQ5uOo7.o
+                0x3000f360                fnode
+                0x3000f364                envFunc
+                0x3000f368                envChar
+                0x3000f36a                envShort
+                0x3000f36c                envInt
+ .sbss          0x3000f370        0x4 /tmp/ccs9osJP.o
+ .sbss          0x3000f374        0x8 /tmp/ccRnLhpb.o
+ .sbss          0x3000f37c        0x4 /tmp/cciionM9.o
+                0x3000f37c                res_Flash
+ .sbss          0x3000f380        0x8 /tmp/ccUq8V16.o
+ *(.sbss*)
+ *(COMMON)
+                0x3000f388                        . = ALIGN (0x4)
+                0x3000f388                        _ebss = .
+
+.heap           0x3000f388        0x0
+                0x3000f388                        . = ALIGN (0x4)
+                0x3000f388                        _heap_start = .
+
+.stack_dummy    0x30020000        0x0
+                0x30020000                        PROVIDE (_stack_point = .)
+LOAD /tmp/cciuMrOc.o
+LOAD /tmp/ccollpQt.o
+LOAD /tmp/ccN08U6V.o
+LOAD /tmp/ccdmYKye.o
+LOAD /tmp/cc39IcW8.o
+LOAD /tmp/ccAkW0ik.o
+LOAD /tmp/cctY8Ymg.o
+LOAD /tmp/cc2wHJfI.o
+LOAD /tmp/ccjeqp5Z.o
+LOAD /tmp/ccaD31mv.o
+LOAD /tmp/cc6AAVCF.o
+LOAD /tmp/ccDZA7Dg.o
+LOAD /tmp/ccOEElEj.o
+LOAD /tmp/ccxv5n1w.o
+LOAD /tmp/ccrMSayt.o
+LOAD /tmp/ccPotlrU.o
+LOAD /tmp/cc3RSzih.o
+LOAD /tmp/ccNHew1d.o
+LOAD /tmp/ccGyoZZe.o
+LOAD /tmp/ccQ5uOo7.o
+LOAD /tmp/ccHc2psI.o
+LOAD /tmp/ccgQL7zl.o
+LOAD /tmp/cccqTRQa.o
+LOAD /tmp/ccHGrKfK.o
+LOAD /tmp/ccaWHjoc.o
+LOAD /tmp/cc9ZhUaG.o
+LOAD /tmp/cc1uLT7X.o
+LOAD /tmp/ccBsCXAL.o
+LOAD /tmp/ccs9osJP.o
+LOAD /tmp/ccRnLhpb.o
+LOAD /tmp/cciionM9.o
+LOAD /tmp/ccUq8V16.o
+LOAD /tmp/ccNcYOhD.o
+LOAD /tmp/cccT9S3b.o
+LOAD /tmp/ccSkcqra.o
+LOAD /tmp/ccydPWHI.o
+OUTPUT(build/retrosoc_fw elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x2a
+ .riscv.attributes
+                0x00000000       0x28 /tmp/cciuMrOc.o
+ .riscv.attributes
+                0x00000028       0x28 /tmp/ccollpQt.o
+ .riscv.attributes
+                0x00000050       0x28 /tmp/ccN08U6V.o
+ .riscv.attributes
+                0x00000078       0x2a /tmp/ccdmYKye.o
+ .riscv.attributes
+                0x000000a2       0x2a /tmp/cc39IcW8.o
+ .riscv.attributes
+                0x000000cc       0x2a /tmp/ccAkW0ik.o
+ .riscv.attributes
+                0x000000f6       0x2a /tmp/cctY8Ymg.o
+ .riscv.attributes
+                0x00000120       0x2a /tmp/cc2wHJfI.o
+ .riscv.attributes
+                0x0000014a       0x2a /tmp/ccjeqp5Z.o
+ .riscv.attributes
+                0x00000174       0x2a /tmp/ccaD31mv.o
+ .riscv.attributes
+                0x0000019e       0x2a /tmp/cc6AAVCF.o
+ .riscv.attributes
+                0x000001c8       0x2a /tmp/ccDZA7Dg.o
+ .riscv.attributes
+                0x000001f2       0x2a /tmp/ccOEElEj.o
+ .riscv.attributes
+                0x0000021c       0x2a /tmp/ccxv5n1w.o
+ .riscv.attributes
+                0x00000246       0x2a /tmp/ccrMSayt.o
+ .riscv.attributes
+                0x00000270       0x2a /tmp/ccPotlrU.o
+ .riscv.attributes
+                0x0000029a       0x2a /tmp/cc3RSzih.o
+ .riscv.attributes
+                0x000002c4       0x2a /tmp/ccNHew1d.o
+ .riscv.attributes
+                0x000002ee       0x2a /tmp/ccGyoZZe.o
+ .riscv.attributes
+                0x00000318       0x2a /tmp/ccQ5uOo7.o
+ .riscv.attributes
+                0x00000342       0x2a /tmp/ccHc2psI.o
+ .riscv.attributes
+                0x0000036c       0x2a /tmp/ccgQL7zl.o
+ .riscv.attributes
+                0x00000396       0x2a /tmp/cccqTRQa.o
+ .riscv.attributes
+                0x000003c0       0x2a /tmp/ccHGrKfK.o
+ .riscv.attributes
+                0x000003ea       0x2a /tmp/ccaWHjoc.o
+ .riscv.attributes
+                0x00000414       0x2a /tmp/cc9ZhUaG.o
+ .riscv.attributes
+                0x0000043e       0x2a /tmp/cc1uLT7X.o
+ .riscv.attributes
+                0x00000468       0x2a /tmp/ccBsCXAL.o
+ .riscv.attributes
+                0x00000492       0x2a /tmp/ccs9osJP.o
+ .riscv.attributes
+                0x000004bc       0x2a /tmp/ccRnLhpb.o
+ .riscv.attributes
+                0x000004e6       0x2a /tmp/cciionM9.o
+ .riscv.attributes
+                0x00000510       0x2a /tmp/ccUq8V16.o
+ .riscv.attributes
+                0x0000053a       0x2a /tmp/ccNcYOhD.o
+ .riscv.attributes
+                0x00000564       0x2a /tmp/cccT9S3b.o
+ .riscv.attributes
+                0x0000058e       0x2a /tmp/ccSkcqra.o
+ .riscv.attributes
+                0x000005b8       0x2a /tmp/ccydPWHI.o
+
+.comment        0x00000000       0x19
+ .comment       0x00000000       0x19 /tmp/ccdmYKye.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cc39IcW8.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccAkW0ik.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cctY8Ymg.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cc2wHJfI.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccjeqp5Z.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccaD31mv.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cc6AAVCF.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccDZA7Dg.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccOEElEj.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccxv5n1w.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccrMSayt.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccPotlrU.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cc3RSzih.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccNHew1d.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccGyoZZe.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccQ5uOo7.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccHc2psI.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccgQL7zl.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cccqTRQa.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccHGrKfK.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccaWHjoc.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cc9ZhUaG.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cc1uLT7X.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccBsCXAL.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccs9osJP.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccRnLhpb.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cciionM9.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccUq8V16.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccNcYOhD.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/cccT9S3b.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccSkcqra.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019        0x0 /tmp/ccydPWHI.o
+                                 0x1a (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccdmYKye.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc39IcW8.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccAkW0ik.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cctY8Ymg.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc2wHJfI.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccjeqp5Z.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccaD31mv.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc6AAVCF.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccDZA7Dg.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccOEElEj.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccxv5n1w.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccrMSayt.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccPotlrU.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc3RSzih.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccNHew1d.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccGyoZZe.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccQ5uOo7.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccHc2psI.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccgQL7zl.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cccqTRQa.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccHGrKfK.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccaWHjoc.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc9ZhUaG.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc1uLT7X.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccBsCXAL.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccs9osJP.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccRnLhpb.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cciionM9.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccUq8V16.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccNcYOhD.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cccT9S3b.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccSkcqra.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccydPWHI.o
+
+Cross Reference Table
+
+Symbol                                            File
+MYSPI_Init                                        /tmp/cc9ZhUaG.o
+MYSPI_Start                                       /tmp/cc9ZhUaG.o
+MYSPI_Stop                                        /tmp/cc9ZhUaG.o
+MYSPI_SwapByte                                    /tmp/cc9ZhUaG.o
+__divsi3                                          /tmp/ccN08U6V.o
+__lshrdi3                                         /tmp/ccjeqp5Z.o
+__modsi3                                          /tmp/ccN08U6V.o
+__muldi3                                          /tmp/ccollpQt.o
+__mulsi3                                          /tmp/cc2wHJfI.o
+__udivsi3                                         /tmp/ccN08U6V.o
+__umodsi3                                         /tmp/ccN08U6V.o
+_ebss                                             /tmp/cciuMrOc.o
+_edata                                            /tmp/cciuMrOc.o
+_sbss                                             /tmp/cciuMrOc.o
+_sdata                                            /tmp/cciuMrOc.o
+_sidata                                           /tmp/cciuMrOc.o
+_stack_point                                      /tmp/cciuMrOc.o
+agencyshellRun                                    /tmp/cccqTRQa.o
+chdir                                             /tmp/ccQ5uOo7.o
+                                                  /tmp/ccHc2psI.o
+create_shell_env_varible                          /tmp/ccQ5uOo7.o
+                                                  /tmp/ccrMSayt.o
+create_task                                       /tmp/ccUq8V16.o
+createfile                                        /tmp/ccQ5uOo7.o
+                                                  /tmp/ccHc2psI.o
+ctx_init                                          /tmp/ccNcYOhD.o
+                                                  /tmp/ccUq8V16.o
+delay_ms                                          /tmp/cctY8Ymg.o
+delete_task                                       /tmp/ccUq8V16.o
+disk_initialize                                   /tmp/ccs9osJP.o
+                                                  /tmp/ccRnLhpb.o
+disk_ioctl                                        /tmp/ccs9osJP.o
+                                                  /tmp/ccRnLhpb.o
+disk_read                                         /tmp/ccs9osJP.o
+                                                  /tmp/ccRnLhpb.o
+disk_status                                       /tmp/ccs9osJP.o
+                                                  /tmp/ccRnLhpb.o
+disk_write                                        /tmp/ccs9osJP.o
+                                                  /tmp/ccRnLhpb.o
+easy_print                                        /tmp/ccrMSayt.o
+editCmd                                           /tmp/ccSkcqra.o
+                                                  /tmp/cccqTRQa.o
+editor_build_line_offsets                         /tmp/ccSkcqra.o
+editor_construct_path                             /tmp/ccSkcqra.o
+editor_line_length                                /tmp/ccSkcqra.o
+                                                  /tmp/ccydPWHI.o
+editor_render                                     /tmp/ccydPWHI.o
+                                                  /tmp/ccSkcqra.o
+enter_load_from_ctx                               /tmp/ccNcYOhD.o
+                                                  /tmp/ccUq8V16.o
+envChar                                           /tmp/ccQ5uOo7.o
+                                                  /tmp/cccqTRQa.o
+envFunc                                           /tmp/ccQ5uOo7.o
+                                                  /tmp/cccqTRQa.o
+envInt                                            /tmp/ccQ5uOo7.o
+                                                  /tmp/cccqTRQa.o
+envShort                                          /tmp/ccQ5uOo7.o
+                                                  /tmp/cccqTRQa.o
+envString                                         /tmp/ccQ5uOo7.o
+                                                  /tmp/cccqTRQa.o
+exec_func                                         /tmp/ccQ5uOo7.o
+exit_save_to_ctx                                  /tmp/ccNcYOhD.o
+                                                  /tmp/ccUq8V16.o
+f_chdir                                           /tmp/ccRnLhpb.o
+                                                  /tmp/ccQ5uOo7.o
+f_chdrive                                         /tmp/ccRnLhpb.o
+f_close                                           /tmp/ccRnLhpb.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/ccQ5uOo7.o
+f_closedir                                        /tmp/ccRnLhpb.o
+                                                  /tmp/ccQ5uOo7.o
+f_getcwd                                          /tmp/ccRnLhpb.o
+                                                  /tmp/ccQ5uOo7.o
+f_getfree                                         /tmp/ccRnLhpb.o
+f_gets                                            /tmp/ccRnLhpb.o
+f_lseek                                           /tmp/ccRnLhpb.o
+f_mkdir                                           /tmp/ccRnLhpb.o
+f_mkfs                                            /tmp/ccRnLhpb.o
+                                                  /tmp/cciionM9.o
+f_mount                                           /tmp/ccRnLhpb.o
+                                                  /tmp/cciionM9.o
+f_open                                            /tmp/ccRnLhpb.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/ccQ5uOo7.o
+f_opendir                                         /tmp/ccRnLhpb.o
+                                                  /tmp/ccQ5uOo7.o
+f_printf                                          /tmp/ccRnLhpb.o
+f_putc                                            /tmp/ccRnLhpb.o
+f_puts                                            /tmp/ccRnLhpb.o
+f_read                                            /tmp/ccRnLhpb.o
+                                                  /tmp/ccSkcqra.o
+f_readdir                                         /tmp/ccRnLhpb.o
+                                                  /tmp/ccQ5uOo7.o
+f_rename                                          /tmp/ccRnLhpb.o
+f_stat                                            /tmp/ccRnLhpb.o
+f_sync                                            /tmp/ccRnLhpb.o
+f_truncate                                        /tmp/ccRnLhpb.o
+f_unlink                                          /tmp/ccRnLhpb.o
+f_write                                           /tmp/ccRnLhpb.o
+ff_oem2uni                                        /tmp/cc1uLT7X.o
+                                                  /tmp/ccRnLhpb.o
+ff_uni2oem                                        /tmp/cc1uLT7X.o
+                                                  /tmp/ccRnLhpb.o
+ff_wtoupper                                       /tmp/cc1uLT7X.o
+                                                  /tmp/ccRnLhpb.o
+fnode                                             /tmp/ccQ5uOo7.o
+fs_Flash                                          /tmp/cciionM9.o
+getcwd                                            /tmp/ccQ5uOo7.o
+                                                  /tmp/ccHc2psI.o
+gpio_hal_get_level                                /tmp/ccxv5n1w.o
+                                                  /tmp/cc9ZhUaG.o
+gpio_hal_input_enable                             /tmp/ccxv5n1w.o
+                                                  /tmp/cc9ZhUaG.o
+gpio_hal_output_enable                            /tmp/ccxv5n1w.o
+                                                  /tmp/cc9ZhUaG.o
+gpio_hal_read_update                              /tmp/ccxv5n1w.o
+                                                  /tmp/cc9ZhUaG.o
+gpio_hal_set_fcfg                                 /tmp/ccxv5n1w.o
+gpio_hal_set_level                                /tmp/ccxv5n1w.o
+                                                  /tmp/cc9ZhUaG.o
+gpio_hal_set_mux                                  /tmp/ccxv5n1w.o
+gpio_hal_write_update                             /tmp/ccxv5n1w.o
+                                                  /tmp/cc9ZhUaG.o
+hal_delay_ms                                      /tmp/cctY8Ymg.o
+hal_delay_s                                       /tmp/cctY8Ymg.o
+hal_delay_us                                      /tmp/cctY8Ymg.o
+                                                  /tmp/ccxv5n1w.o
+hal_get_sys_tick                                  /tmp/cctY8Ymg.o
+hal_hp_uart_config                                /tmp/cc39IcW8.o
+hal_hp_uart_init                                  /tmp/cc39IcW8.o
+hal_hp_uart_putstr                                /tmp/cc39IcW8.o
+hal_hp_uart_recv                                  /tmp/cc39IcW8.o
+hal_hp_uart_recv_str                              /tmp/cc39IcW8.o
+hal_hp_uart_send                                  /tmp/cc39IcW8.o
+hal_i2c_deinit                                    /tmp/ccOEElEj.o
+hal_i2c_init                                      /tmp/ccOEElEj.o
+hal_i2c_read_nbyte                                /tmp/ccOEElEj.o
+hal_i2c_write_nbyte                               /tmp/ccOEElEj.o
+hal_qspi_deinit                                   /tmp/ccDZA7Dg.o
+hal_qspi_init                                     /tmp/ccDZA7Dg.o
+                                                  /tmp/ccPotlrU.o
+hal_qspi_read                                     /tmp/ccDZA7Dg.o
+                                                  /tmp/ccPotlrU.o
+hal_qspi_send_cmd                                 /tmp/ccDZA7Dg.o
+                                                  /tmp/ccPotlrU.o
+hal_qspi_write                                    /tmp/ccDZA7Dg.o
+                                                  /tmp/ccPotlrU.o
+hal_qspi_write_16                                 /tmp/ccDZA7Dg.o
+hal_qspi_write_16_cs                              /tmp/ccDZA7Dg.o
+hal_qspi_write_32                                 /tmp/ccDZA7Dg.o
+hal_qspi_write_32_cs                              /tmp/ccDZA7Dg.o
+hal_qspi_write_32x16                              /tmp/ccDZA7Dg.o
+hal_qspi_write_32x16_cs                           /tmp/ccDZA7Dg.o
+hal_qspi_write_32x2                               /tmp/ccDZA7Dg.o
+hal_qspi_write_32x2_cs                            /tmp/ccDZA7Dg.o
+hal_qspi_write_32x32                              /tmp/ccDZA7Dg.o
+hal_qspi_write_32x32_cs                           /tmp/ccDZA7Dg.o
+hal_qspi_write_32x8                               /tmp/ccDZA7Dg.o
+hal_qspi_write_32x8_cs                            /tmp/ccDZA7Dg.o
+hal_qspi_write_8                                  /tmp/ccDZA7Dg.o
+hal_qspi_write_8_cs                               /tmp/ccDZA7Dg.o
+hal_sys_getchar                                   /tmp/cc6AAVCF.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/ccQ5uOo7.o
+hal_sys_putchar                                   /tmp/cc6AAVCF.o
+                                                  /tmp/ccydPWHI.o
+                                                  /tmp/ccQ5uOo7.o
+                                                  /tmp/ccaD31mv.o
+hal_sys_putstr                                    /tmp/cc6AAVCF.o
+hal_sys_tick_init                                 /tmp/cctY8Ymg.o
+hal_sys_uart_init                                 /tmp/cc6AAVCF.o
+                                                  /tmp/ccrMSayt.o
+listdir                                           /tmp/ccQ5uOo7.o
+                                                  /tmp/ccHc2psI.o
+load_filesystem                                   /tmp/cciionM9.o
+                                                  /tmp/ccHc2psI.o
+load_shell                                        /tmp/ccHc2psI.o
+                                                  /tmp/ccrMSayt.o
+log_close                                         /tmp/cccT9S3b.o
+log_init                                          /tmp/cccT9S3b.o
+log_print                                         /tmp/cccT9S3b.o
+                                                  /tmp/cciionM9.o
+                                                  /tmp/ccRnLhpb.o
+                                                  /tmp/ccs9osJP.o
+                                                  /tmp/ccQ5uOo7.o
+                                                  /tmp/ccGyoZZe.o
+                                                  /tmp/ccNHew1d.o
+                                                  /tmp/cc3RSzih.o
+                                                  /tmp/ccxv5n1w.o
+main                                              /tmp/ccrMSayt.o
+                                                  /tmp/cciuMrOc.o
+memcmp                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccRnLhpb.o
+memcpy                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccNcYOhD.o
+                                                  /tmp/ccUq8V16.o
+                                                  /tmp/cciionM9.o
+                                                  /tmp/ccRnLhpb.o
+                                                  /tmp/ccaWHjoc.o
+                                                  /tmp/ccHGrKfK.o
+                                                  /tmp/cc3RSzih.o
+                                                  /tmp/ccrMSayt.o
+memmove                                           /tmp/ccdmYKye.o
+                                                  /tmp/ccSkcqra.o
+memset                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/ccNcYOhD.o
+                                                  /tmp/ccUq8V16.o
+                                                  /tmp/ccRnLhpb.o
+                                                  /tmp/ccHc2psI.o
+                                                  /tmp/ccGyoZZe.o
+                                                  /tmp/ccNHew1d.o
+pairedChars                                       /tmp/ccHGrKfK.o
+printf                                            /tmp/ccaD31mv.o
+                                                  /tmp/ccydPWHI.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/cccT9S3b.o
+                                                  /tmp/ccUq8V16.o
+                                                  /tmp/cciionM9.o
+                                                  /tmp/ccHc2psI.o
+                                                  /tmp/ccrMSayt.o
+pwm_hal_disable                                   /tmp/ccAkW0ik.o
+pwm_hal_enable                                    /tmp/ccAkW0ik.o
+pwm_hal_init                                      /tmp/ccAkW0ik.o
+pwm_hal_set_compare                               /tmp/ccAkW0ik.o
+res_Flash                                         /tmp/cciionM9.o
+resume_task                                       /tmp/ccUq8V16.o
+set_fnode                                         /tmp/ccQ5uOo7.o
+                                                  /tmp/ccrMSayt.o
+sfud_chip_erase                                   /tmp/cc3RSzih.o
+sfud_device_init                                  /tmp/cc3RSzih.o
+sfud_erase                                        /tmp/cc3RSzih.o
+sfud_erase_write                                  /tmp/cc3RSzih.o
+                                                  /tmp/ccs9osJP.o
+sfud_get_device                                   /tmp/cc3RSzih.o
+sfud_get_device_num                               /tmp/cc3RSzih.o
+sfud_get_device_table                             /tmp/cc3RSzih.o
+                                                  /tmp/ccs9osJP.o
+sfud_init                                         /tmp/cc3RSzih.o
+                                                  /tmp/ccs9osJP.o
+sfud_read                                         /tmp/cc3RSzih.o
+                                                  /tmp/ccs9osJP.o
+sfud_read_sfdp                                    /tmp/ccNHew1d.o
+                                                  /tmp/cc3RSzih.o
+sfud_read_status                                  /tmp/cc3RSzih.o
+                                                  /tmp/ccs9osJP.o
+sfud_sfdp_get_suitable_eraser                     /tmp/ccNHew1d.o
+                                                  /tmp/cc3RSzih.o
+sfud_spi_port_init                                /tmp/ccPotlrU.o
+                                                  /tmp/cc3RSzih.o
+sfud_write                                        /tmp/cc3RSzih.o
+sfud_write_status                                 /tmp/cc3RSzih.o
+shellBackspace                                    /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellCD                                           /tmp/ccgQL7zl.o
+                                                  /tmp/cccqTRQa.o
+shellCheckPermission                              /tmp/ccHGrKfK.o
+shellClear                                        /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellClearCommandLine                             /tmp/ccHGrKfK.o
+shellCmds                                         /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellCommandCount                                 /tmp/cccqTRQa.o
+                                                  /tmp/ccHGrKfK.o
+shellCommandList                                  /tmp/cccqTRQa.o
+                                                  /tmp/ccHGrKfK.o
+shellCompanionAdd                                 /tmp/ccaWHjoc.o
+                                                  /tmp/ccHc2psI.o
+shellCompanionDel                                 /tmp/ccaWHjoc.o
+shellCompanionGet                                 /tmp/ccaWHjoc.o
+                                                  /tmp/ccgQL7zl.o
+shellDelete                                       /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellDeleteByte                                   /tmp/ccHGrKfK.o
+shellDeleteCommandLine                            /tmp/ccHGrKfK.o
+shellDown                                         /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellEnter                                        /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellExec                                         /tmp/ccHGrKfK.o
+shellExecute                                      /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellExtParsePara                                 /tmp/ccGyoZZe.o
+                                                  /tmp/ccHGrKfK.o
+shellExtRun                                       /tmp/ccGyoZZe.o
+                                                  /tmp/ccHGrKfK.o
+shellFsInit                                       /tmp/ccgQL7zl.o
+                                                  /tmp/ccHc2psI.o
+shellGetCurrent                                   /tmp/ccHGrKfK.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/cccqTRQa.o
+                                                  /tmp/ccgQL7zl.o
+shellGetVarValue                                  /tmp/ccHGrKfK.o
+                                                  /tmp/ccGyoZZe.o
+shellHandler                                      /tmp/ccHGrKfK.o
+shellHelp                                         /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellInit                                         /tmp/ccHGrKfK.o
+                                                  /tmp/ccHc2psI.o
+shellInsertByte                                   /tmp/ccHGrKfK.o
+shellKeys                                         /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellLS                                           /tmp/ccgQL7zl.o
+                                                  /tmp/cccqTRQa.o
+shellLeft                                         /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellListAll                                      /tmp/ccHGrKfK.o
+shellListCommand                                  /tmp/ccHGrKfK.o
+shellListItem                                     /tmp/ccHGrKfK.o
+shellListKey                                      /tmp/ccHGrKfK.o
+shellListUser                                     /tmp/ccHGrKfK.o
+shellListVar                                      /tmp/ccHGrKfK.o
+shellNormalInput                                  /tmp/ccHGrKfK.o
+shellPrint                                        /tmp/ccHGrKfK.o
+shellRead                                         /tmp/ccQ5uOo7.o
+                                                  /tmp/ccHc2psI.o
+shellRemove                                       /tmp/ccHGrKfK.o
+shellRight                                        /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellRun                                          /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellRunCommand                                   /tmp/ccHGrKfK.o
+shellSeekCommand                                  /tmp/ccHGrKfK.o
+                                                  /tmp/ccGyoZZe.o
+shellSetUser                                      /tmp/ccHGrKfK.o
+shellSetVar                                       /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellSetVarValue                                  /tmp/ccHGrKfK.o
+shellSplit                                        /tmp/ccHGrKfK.o
+shellTOUCH                                        /tmp/ccgQL7zl.o
+                                                  /tmp/cccqTRQa.o
+shellTab                                          /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellTask                                         /tmp/ccHGrKfK.o
+                                                  /tmp/ccHc2psI.o
+shellToDec                                        /tmp/ccHGrKfK.o
+shellToHex                                        /tmp/ccHGrKfK.o
+shellUp                                           /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellUsers                                        /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellVars                                         /tmp/ccHGrKfK.o
+                                                  /tmp/cccqTRQa.o
+shellWrite                                        /tmp/ccQ5uOo7.o
+                                                  /tmp/ccHc2psI.o
+shellWriteString                                  /tmp/ccHGrKfK.o
+                                                  /tmp/ccgQL7zl.o
+shellfs                                           /tmp/ccaWHjoc.o
+snprintf                                          /tmp/ccaD31mv.o
+                                                  /tmp/ccydPWHI.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/ccQ5uOo7.o
+strchr                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccRnLhpb.o
+strcmp                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccHGrKfK.o
+strcpy                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccQ5uOo7.o
+strlen                                            /tmp/ccdmYKye.o
+                                                  /tmp/ccSkcqra.o
+                                                  /tmp/ccHGrKfK.o
+                                                  /tmp/ccQ5uOo7.o
+strncmp                                           /tmp/ccdmYKye.o
+                                                  /tmp/ccHGrKfK.o
+strncpy                                           /tmp/ccdmYKye.o
+suspend_task                                      /tmp/ccUq8V16.o
+task_scheduler                                    /tmp/ccUq8V16.o
+vprintf                                           /tmp/ccaD31mv.o
+                                                  /tmp/cccT9S3b.o
+vsnprintf                                         /tmp/ccaD31mv.o
+                                                  /tmp/ccHGrKfK.o
+work_buf                                          /tmp/cciionM9.o

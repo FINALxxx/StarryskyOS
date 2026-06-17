@@ -12,6 +12,7 @@
 #include "shell.h"
 #include "shell_fs.h"
 #include "shell_port.h"
+#include "text_editor.h"
 
 #if SHELL_USING_CMD_EXPORT != 1
 
@@ -30,6 +31,7 @@ extern void shellCmds(void);
 extern void shellVars(void);
 extern void shellKeys(void);
 extern void shellClear(void);
+extern int editCmd(int argc, char *argv[]);
 #if SHELL_EXEC_UNDEF_FUNC == 1
 extern int shellExecute(int argc, char *argv[]);
 #endif
@@ -126,9 +128,14 @@ const ShellCommand shellCommandList[] =
                     change dir),
 
     SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_FUNC)|SHELL_CMD_DISABLE_RETURN,
-                    touch, 
-                    shellTOUCH, 
+                    touch,
+                    shellTOUCH,
                     create a new file),
+
+    SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN)|SHELL_CMD_DISABLE_RETURN,
+                    edit,
+                    editCmd,
+                    edit file\r\nedit <filename>),
 #endif
 
     SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_FUNC)|SHELL_CMD_DISABLE_RETURN,
