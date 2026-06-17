@@ -12,6 +12,17 @@
 /* ===== Source Buffer ===== */
 #define FCC_SRC_MAX     (32 * 1024)
 
+/* ===== RISC-V Register Numbers ===== */
+enum {
+    REG_ZERO = 0,
+    REG_RA   = 1,
+    REG_SP   = 2,
+    REG_T0   = 5,
+    REG_T1   = 6,
+    REG_T2   = 7,
+    REG_A0   = 10,
+};
+
 /* ===== Token Types ===== */
 typedef enum {
     TOK_EOF = 0,

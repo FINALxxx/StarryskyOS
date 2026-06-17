@@ -181,7 +181,7 @@ const ShellCommand shellCommandList[] =
 
                    
 #if SHELL_EXEC_UNDEF_FUNC == 1
-    SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN)|SHELL_CMD_DISABLE_RETURN,
+    SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN),
                    exec, shellExecute, execute function undefined),
 #endif
 };

@@ -1,17 +1,6 @@
 #include "fcc.h"
 #include "stdio.h"
 
-/* ===== RISC-V Register Numbers ===== */
-enum {
-    REG_ZERO = 0,
-    REG_RA   = 1,
-    REG_SP   = 2,
-    REG_T0   = 5,
-    REG_T1   = 6,
-    REG_T2   = 7,
-    REG_A0   = 10,
-};
-
 /* ===== RISC-V Opcodes ===== */
 enum {
     OP_IMM  = 0x13,
@@ -244,7 +233,40 @@ void cg_epilogue(void) {
     cg_jalr(REG_ZERO, REG_RA, 0);  /* ret */
 }
 
-/* Set return value */
-void cg_retval(int imm) {
-    cg_li(REG_A0, imm);
+/* ===== Expression evaluation stack ===== */
+
+/* Push an immediate value onto the expression stack */
+void cg_push_imm(int imm) {
+    cg_li(REG_T0, imm);
+    cg_addi(REG_SP, REG_SP, -4);
+    cg_sw(REG_T0, REG_SP, 0);
+}
+
+/* Pop the top of the expression stack into register rd */
+void cg_pop(int rd) {
+    cg_lw(rd, REG_SP, 0);
+    cg_addi(REG_SP, REG_SP, 4);
+}
+
+/* Binary operator: pop two operands, compute, push result */
+static void cg_binop(void (*op_func)(int, int, int)) {
+    cg_pop(REG_T1);         /* right operand  */
+    cg_pop(REG_T0);         /* left operand   */
+    op_func(REG_T0, REG_T0, REG_T1);
+    cg_addi(REG_SP, REG_SP, -4);
+    cg_sw(REG_T0, REG_SP, 0);
+}
+
+void cg_add_op(void) { cg_binop(cg_add); }
+void cg_sub_op(void) { cg_binop(cg_sub); }
+void cg_mul_op(void) { cg_binop(cg_mul); }
+void cg_div_op(void) { cg_binop(cg_div); }
+void cg_rem_op(void) { cg_binop(cg_rem); }
+
+/* Unary minus: pop, negate, push */
+void cg_neg_op(void) {
+    cg_pop(REG_T0);
+    cg_sub(REG_T0, REG_ZERO, REG_T0);
+    cg_addi(REG_SP, REG_SP, -4);
+    cg_sw(REG_T0, REG_SP, 0);
 }

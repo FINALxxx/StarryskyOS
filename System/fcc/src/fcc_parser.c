@@ -1,11 +1,18 @@
 #include "fcc.h"
 #include "stdio.h"
 
-/* Codegen functions used by parser */
+/* Codegen functions */
 void codegen_init(Compiler *comp);
 void cg_prologue(void);
 void cg_epilogue(void);
-void cg_retval(int imm);
+void cg_pop(int rd);
+void cg_push_imm(int imm);
+void cg_add_op(void);
+void cg_sub_op(void);
+void cg_mul_op(void);
+void cg_div_op(void);
+void cg_rem_op(void);
+void cg_neg_op(void);
 
 /* ===== Error reporting ===== */
 
@@ -27,24 +34,34 @@ static void expect(Compiler *comp, TokenType type, const char *what) {
     }
 }
 
-/* consume current token unconditionally */
 static void advance(Compiler *comp) {
     if (!comp->error) {
         lexer_next(&comp->lexer);
     }
 }
 
-/* ===== Expression parser ===== */
+/* ===== Expression parser (recursive descent) ===== */
+
+static void parse_add(Compiler *comp);
+static void parse_mul(Compiler *comp);
+static void parse_unary(Compiler *comp);
 
 /**
- * Issue 01: only integer literal after "return".
- * Later issues extend this for arithmetic, variables, function calls.
+ * primary → NUMBER
+ *         | "(" add ")"
+ *         | IDENT               (Issue 03: variable reference)
  */
-static void parse_expr(Compiler *comp) {
+static void parse_primary(Compiler *comp) {
     if (comp->lexer.current.type == TOK_NUMBER) {
         int val = comp->lexer.current.value;
         advance(comp);
-        cg_retval(val);
+        cg_push_imm(val);
+        return;
+    }
+    if (comp->lexer.current.type == TOK_LPAREN) {
+        advance(comp);  /* consume '(' */
+        parse_add(comp);
+        expect(comp, TOK_RPAREN, "')'");
         return;
     }
     if (comp->lexer.current.type == TOK_IDENT) {
@@ -54,12 +71,72 @@ static void parse_expr(Compiler *comp) {
     parse_error(comp, "expected expression");
 }
 
+/**
+ * unary → "-" unary
+ *       | primary
+ */
+static void parse_unary(Compiler *comp) {
+    if (comp->lexer.current.type == TOK_MINUS) {
+        advance(comp);  /* consume '-' */
+        parse_unary(comp);
+        cg_neg_op();
+        return;
+    }
+    parse_primary(comp);
+}
+
+/**
+ * mul → unary { ("*" | "/" | "%") unary }*
+ */
+static void parse_mul(Compiler *comp) {
+    parse_unary(comp);
+    while (!comp->error
+           && (comp->lexer.current.type == TOK_STAR
+               || comp->lexer.current.type == TOK_SLASH
+               || comp->lexer.current.type == TOK_PERCENT)) {
+        TokenType op = comp->lexer.current.type;
+        advance(comp);
+        parse_unary(comp);
+        switch (op) {
+            case TOK_STAR:    cg_mul_op(); break;
+            case TOK_SLASH:   cg_div_op(); break;
+            case TOK_PERCENT: cg_rem_op(); break;
+            default: break;
+        }
+    }
+}
+
+/**
+ * add → mul { ("+" | "-") mul }*
+ */
+static void parse_add(Compiler *comp) {
+    parse_mul(comp);
+    while (!comp->error
+           && (comp->lexer.current.type == TOK_PLUS
+               || comp->lexer.current.type == TOK_MINUS)) {
+        TokenType op = comp->lexer.current.type;
+        advance(comp);
+        parse_mul(comp);
+        switch (op) {
+            case TOK_PLUS:  cg_add_op(); break;
+            case TOK_MINUS: cg_sub_op(); break;
+            default: break;
+        }
+    }
+}
+
 /* ===== Statement parser ===== */
 
+/**
+ * statement → "return" add ";"
+ *           | "if"  ...        (Issue 04)
+ *           | "while" ...      (Issue 04)
+ */
 static void parse_statement(Compiler *comp) {
     if (comp->lexer.current.type == TOK_RETURN) {
-        advance(comp);  /* consume "return" */
-        parse_expr(comp);
+        advance(comp);   /* consume "return" */
+        parse_add(comp); /* evaluate expression → result on stack */
+        cg_pop(REG_A0);  /* pop result into return register */
         expect(comp, TOK_SEMI, "';'");
     } else {
         parse_error(comp, "expected statement");
@@ -69,20 +146,15 @@ static void parse_statement(Compiler *comp) {
 /* ===== Function parser ===== */
 
 static void parse_function(Compiler *comp) {
-    /* type: "int" */
     expect(comp, TOK_INT, "'int'");
 
-    /* function name */
     if (!comp->error && comp->lexer.current.type != TOK_IDENT) {
         parse_error(comp, "expected function name");
     }
     advance(comp);
 
-    /* parameter list: "(" ")" */
     expect(comp, TOK_LPAREN, "'('");
     expect(comp, TOK_RPAREN, "')'");
-
-    /* body */
     expect(comp, TOK_LBRACE, "'{'");
 
     if (!comp->error) {
@@ -97,7 +169,6 @@ static void parse_function(Compiler *comp) {
 /* ===== Top-level ===== */
 
 static void parse_program(Compiler *comp) {
-    /* Issue 01: one function only */
     if (!comp->error && comp->lexer.current.type != TOK_EOF) {
         parse_function(comp);
     }
