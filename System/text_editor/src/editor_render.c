@@ -138,7 +138,9 @@ static void editor_render_bottom_bar(EditorState *ed) {
  * starting from ed->scroll_row.
  */
 void editor_render(EditorState *ed) {
-    printf(ANSI_CLEAR ANSI_CURSOR_HIDE);
+    /* Home cursor + hide — no clear-screen to avoid flicker.
+     * Every visible line is overwritten positionally below. */
+    printf("\033[H" ANSI_CURSOR_HIDE);
 
     editor_render_top_bar(ed);
 

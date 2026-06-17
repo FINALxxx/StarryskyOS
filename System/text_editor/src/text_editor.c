@@ -12,8 +12,10 @@
 #include "hal_sys_uart.h"
 #include "board.h"
 
-/* Busy-wait ~140µs at 72MHz — enough for one byte at 115200 baud (87µs) */
-#define ESC_DELAY_LOOPS  10000
+/* Poll timeout: max iterations waiting for '[' after ESC.  Each iteration
+ * does one MMIO read; 2000 iterations ≈ tens of ms — fast enough for
+ * standalone ESC, but long enough to catch arrow-key CSI sequences. */
+#define ESC_POLL_MAX  2000
 
 /* ===== Singleton Editor State ===== */
 static EditorState editor;
@@ -202,28 +204,26 @@ static int editor_read_key(void) {
     }
 
     /*
-     * ESC received.  Flush the UART data register so any hardware
-     * "data ready" flag has time to clear, then wait long enough for
-     * one byte to arrive at 115200 baud (~87 µs).  After that, a
-     * single poll tells us whether a CSI sequence follows.
+     * ESC received.  Poll the UART register for '[' within a short
+     * window.  For arrow keys the '[' byte is already in-flight and
+     * appears almost instantly; for a standalone ESC the poll expires
+     * and we return KEY_ESC.  Filter out re-reads of the ESC byte
+     * itself — some UARTs need a cycle to clear the "data ready" flag.
      */
-    for (volatile int flush = 0; flush < 16; flush++) {
-        (void)REG_UART_0_DATA;
-    }
-
-    for (volatile int d = 0; d < ESC_DELAY_LOOPS; d++) {
-        asm volatile ("" : : : "memory");
-    }
-
-    int next = uart_poll();
-    if (next == '[') {
-        int dir = (int)hal_sys_getchar();
-        switch (dir) {
-            case 'A': return KEY_UP;
-            case 'B': return KEY_DOWN;
-            case 'C': return KEY_RIGHT;
-            case 'D': return KEY_LEFT;
-            default:  return KEY_UNKNOWN;
+    for (volatile int i = 0; i < ESC_POLL_MAX; i++) {
+        int next = uart_poll();
+        if (next >= 0 && next != 0x1B) {
+            if (next == '[') {
+                int dir = (int)hal_sys_getchar();
+                switch (dir) {
+                    case 'A': return KEY_UP;
+                    case 'B': return KEY_DOWN;
+                    case 'C': return KEY_RIGHT;
+                    case 'D': return KEY_LEFT;
+                    default:  return KEY_UNKNOWN;
+                }
+            }
+            return KEY_UNKNOWN;
         }
     }
 
