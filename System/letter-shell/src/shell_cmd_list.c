@@ -57,6 +57,13 @@ const ShellCommand shellCommandList[] =
                    0x1B5B4300, shellRight, right),
     SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_ENABLE_UNCHECKED,
                    0x1B5B4400, shellLeft, left),
+    /* VT52 arrow keys (no '[' byte): ESC A/B/C/D */
+    SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0), 0x1B410000, shellUp, up-vt52),
+    SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0), 0x1B420000, shellDown, down-vt52),
+    SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_ENABLE_UNCHECKED,
+                   0x1B430000, shellRight, right-vt52),
+    SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_ENABLE_UNCHECKED,
+                   0x1B440000, shellLeft, left-vt52),
     SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0), 0x09000000, shellTab, tab),
     SHELL_KEY_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_ENABLE_UNCHECKED,
                    0x08000000, shellBackspace, backspace),

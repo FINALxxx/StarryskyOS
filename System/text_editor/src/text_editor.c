@@ -214,6 +214,7 @@ static int editor_read_key(void) {
         int next = uart_poll();
         if (next >= 0 && next != 0x1B) {
             if (next == '[') {
+                /* ANSI / VT100: ESC [ A/B/C/D */
                 int dir = (int)hal_sys_getchar();
                 switch (dir) {
                     case 'A': return KEY_UP;
@@ -223,7 +224,14 @@ static int editor_read_key(void) {
                     default:  return KEY_UNKNOWN;
                 }
             }
-            return KEY_UNKNOWN;
+            /* VT52: ESC A/B/C/D (no '[' byte) */
+            switch (next) {
+                case 'A': return KEY_UP;
+                case 'B': return KEY_DOWN;
+                case 'C': return KEY_RIGHT;
+                case 'D': return KEY_LEFT;
+                default:  return KEY_UNKNOWN;
+            }
         }
     }
 
