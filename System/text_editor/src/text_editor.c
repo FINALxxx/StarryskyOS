@@ -312,7 +312,10 @@ static void editor_move_right(EditorState *ed) {
  *        Shifts subsequent text right and updates line offsets.
  */
 static void editor_insert_char(EditorState *ed, char ch) {
-    if (ed->text_length >= MAX_FILE_SIZE) return;
+    if (ed->text_length >= MAX_FILE_SIZE) {
+        ed->buffer_full = 1;
+        return;
+    }
 
     uint16_t pos = ed->line_offsets[ed->cursor_row] + ed->cursor_col;
 
@@ -444,7 +447,8 @@ static void editor_loop(EditorState *ed) {
         editor_render(ed);
 
         int key = editor_read_key();
-        ed->save_error = 0;  /* transient — clears on any key */
+        ed->save_error  = 0;  /* transient — clears on any key */
+        ed->buffer_full = 0;  /* transient — clears on any key */
 
         /* ESC warning state: waiting for confirmation */
         if (ed->esc_warning) {
@@ -481,6 +485,17 @@ static void editor_loop(EditorState *ed) {
             case 0x08:                              /* Backspace */
             case 0x7F:                              /* Delete */
                 editor_delete_char(ed);
+                break;
+
+            case 0x09:                              /* Tab — insert 4 spaces */
+                if (ed->text_length + 4 > MAX_FILE_SIZE) {
+                    ed->buffer_full = 1;
+                } else {
+                    editor_insert_char(ed, ' ');
+                    editor_insert_char(ed, ' ');
+                    editor_insert_char(ed, ' ');
+                    editor_insert_char(ed, ' ');
+                }
                 break;
 
             default:

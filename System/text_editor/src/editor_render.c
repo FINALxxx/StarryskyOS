@@ -119,6 +119,9 @@ static void editor_render_bottom_bar(EditorState *ed) {
     } else if (ed->save_error) {
         printf(WARN_BAR_STYLE);
         printed = printf("  Save failed!");
+    } else if (ed->buffer_full) {
+        printf(WARN_BAR_STYLE);
+        printed = printf("  Buffer full!");
     } else {
         printf(BOT_BAR_STYLE);
         printed = printf("  Ln %u, Col %u | Ctrl+W Save  Esc Exit",

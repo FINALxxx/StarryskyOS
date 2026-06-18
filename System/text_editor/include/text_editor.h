@@ -66,6 +66,7 @@ typedef struct {
     int      cols;                        /* terminal columns */
     int      esc_warning;                 /* ESC pressed once with unsaved changes */
     int      save_error;                  /* last save failed (transient) */
+    int      buffer_full;                 /* buffer full — insertion rejected (transient) */
 } EditorState;
 
 /* ===== Public API ===== */
