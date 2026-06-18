@@ -74,71 +74,81 @@ static void emit(uint32_t instr) {
 
 /* ADDI rd, rs1, imm12 */
 void cg_addi(int rd, int rs1, int imm12) {
-    emit(enc_i((uint32_t)imm12, (uint32_t)rs1, F3_ADD_SUB,
-               (uint32_t)rd, OP_IMM));
+    uint32_t instr = enc_i((uint32_t)imm12, (uint32_t)rs1, F3_ADD_SUB,
+                           (uint32_t)rd, OP_IMM);
+    emit(instr);
 }
 
 /* ADD rd, rs1, rs2 */
 void cg_add(int rd, int rs1, int rs2) {
-    emit(enc_r(F7_NORMAL, (uint32_t)rs2, (uint32_t)rs1,
-               F3_ADD_SUB, (uint32_t)rd, OP));
+    uint32_t instr = enc_r(F7_NORMAL, (uint32_t)rs2, (uint32_t)rs1,
+                           F3_ADD_SUB, (uint32_t)rd, OP);
+    emit(instr);
 }
 
 /* SUB rd, rs1, rs2 */
 void cg_sub(int rd, int rs1, int rs2) {
-    emit(enc_r(F7_SUB, (uint32_t)rs2, (uint32_t)rs1,
-               F3_ADD_SUB, (uint32_t)rd, OP));
+    uint32_t instr = enc_r(F7_SUB, (uint32_t)rs2, (uint32_t)rs1,
+                           F3_ADD_SUB, (uint32_t)rd, OP);
+    emit(instr);
 }
 
 /* MUL rd, rs1, rs2  (RV32M) */
 void cg_mul(int rd, int rs1, int rs2) {
-    emit(enc_r(F7_MUL_DIV, (uint32_t)rs2, (uint32_t)rs1,
-               0, (uint32_t)rd, OP));
+    uint32_t instr = enc_r(F7_MUL_DIV, (uint32_t)rs2, (uint32_t)rs1,
+                           0, (uint32_t)rd, OP);
+    emit(instr);
 }
 
 /* DIV rd, rs1, rs2  (RV32M) */
 void cg_div(int rd, int rs1, int rs2) {
-    emit(enc_r(F7_MUL_DIV, (uint32_t)rs2, (uint32_t)rs1,
-               4, (uint32_t)rd, OP));
+    uint32_t instr = enc_r(F7_MUL_DIV, (uint32_t)rs2, (uint32_t)rs1,
+                           4, (uint32_t)rd, OP);
+    emit(instr);
 }
 
 /* REM rd, rs1, rs2  (RV32M) */
 void cg_rem(int rd, int rs1, int rs2) {
-    emit(enc_r(F7_MUL_DIV, (uint32_t)rs2, (uint32_t)rs1,
-               6, (uint32_t)rd, OP));
+    uint32_t instr = enc_r(F7_MUL_DIV, (uint32_t)rs2, (uint32_t)rs1,
+                           6, (uint32_t)rd, OP);
+    emit(instr);
 }
 
 /* LW rd, offset(rs1) */
 void cg_lw(int rd, int rs1, int offset) {
-    emit(enc_i((uint32_t)offset, (uint32_t)rs1, F3_LW,
-               (uint32_t)rd, LOAD));
+    uint32_t instr = enc_i((uint32_t)offset, (uint32_t)rs1, F3_LW,
+                           (uint32_t)rd, LOAD);
+    emit(instr);
 }
 
 /* SW rs2, offset(rs1) */
 void cg_sw(int rs2, int rs1, int offset) {
-    emit(enc_s((uint32_t)offset, (uint32_t)rs2, (uint32_t)rs1,
-               F3_SW, STORE));
+    uint32_t instr = enc_s((uint32_t)offset, (uint32_t)rs2, (uint32_t)rs1,
+                           F3_SW, STORE);
+    emit(instr);
 }
 
 /* LUI rd, imm20 — load upper immediate */
 void cg_lui(int rd, int imm20) {
-    emit(enc_u((uint32_t)imm20, (uint32_t)rd, LUI));
+    uint32_t instr = enc_u((uint32_t)imm20, (uint32_t)rd, LUI);
+    emit(instr);
 }
 
 /* JALR rd, rs1, offset  —  rd=0, rs1=ra, offset=0  → ret */
 void cg_jalr(int rd, int rs1, int offset) {
-    emit(enc_i((uint32_t)offset, (uint32_t)rs1, F3_JALR,
-               (uint32_t)rd, JALR));
+    uint32_t instr = enc_i((uint32_t)offset, (uint32_t)rs1, F3_JALR,
+                           (uint32_t)rd, JALR);
+    emit(instr);
 }
 
 /* JAL rd, offset  — jump and link */
 void cg_jal(int rd, int offset) {
     /* J-type: imm[20|10:1|11|19:12] | rd | opcode */
     uint32_t imm = (uint32_t)offset;
-    uint32_t instr = ((imm & 0x80000) << 11)       /* imm[20] */
-                   | ((imm & 0x7FE)  << 20)         /* imm[10:1] */
-                   | ((imm & 0x800)   <<  9)        /* imm[11] */
-                   | ((imm & 0xFF000) >> 12)        /* imm[19:12] */
+    uint32_t instr = ((imm & 0x100000) << 11)       /* imm[20] → bit 31 */
+                   | ((imm & 0x7FE)    << 20)        /* imm[10:1] → bits 30:21 */
+                   | ((imm & 0x800)    <<  9)        /* imm[11] → bit 20 */
+                   | (imm & 0xFF000)                  /* imm[19:12] → bits 19:12 */
                    | ((uint32_t)rd << 7)
                    | JAL;
     emit(instr);
@@ -147,7 +157,7 @@ void cg_jal(int rd, int offset) {
 /* Branch instructions */
 void cg_beq(int rs1, int rs2, int offset) {
     uint32_t imm = (uint32_t)offset;
-    uint32_t instr = ((imm & 0x800) << 20)          /* imm[12] → bit 31 */
+    uint32_t instr = ((imm & 0x1000) << 19)         /* imm[12] → bit 31 */
                    | ((imm & 0x1E)  <<  7)          /* imm[4:1] → bits 11:8 */
                    | ((imm & 0x7E0) << 20)          /* imm[10:5] → bits 30:25 */
                                                    | ((uint32_t)rs2 << 20)
@@ -159,7 +169,7 @@ void cg_beq(int rs1, int rs2, int offset) {
 
 void cg_bne(int rs1, int rs2, int offset) {
     uint32_t imm = (uint32_t)offset;
-    uint32_t instr = ((imm & 0x800) << 20)
+    uint32_t instr = ((imm & 0x1000) << 19)
                    | ((imm & 0x1E)  <<  7)
                    | ((imm & 0x7E0) << 20)
                    | ((uint32_t)rs2 << 20)
@@ -171,7 +181,7 @@ void cg_bne(int rs1, int rs2, int offset) {
 
 void cg_blt(int rs1, int rs2, int offset) {
     uint32_t imm = (uint32_t)offset;
-    uint32_t instr = ((imm & 0x800) << 20)
+    uint32_t instr = ((imm & 0x1000) << 19)
                    | ((imm & 0x1E)  <<  7)
                    | ((imm & 0x7E0) << 20)
                    | ((uint32_t)rs2 << 20)
@@ -183,7 +193,7 @@ void cg_blt(int rs1, int rs2, int offset) {
 
 void cg_bge(int rs1, int rs2, int offset) {
     uint32_t imm = (uint32_t)offset;
-    uint32_t instr = ((imm & 0x800) << 20)
+    uint32_t instr = ((imm & 0x1000) << 19)
                    | ((imm & 0x1E)  <<  7)
                    | ((imm & 0x7E0) << 20)
                    | ((uint32_t)rs2 << 20)
@@ -221,29 +231,49 @@ void cg_li(int rd, int imm) {
 }
 
 /* Function prologue */
-/* frame_bytes = 16 (ra slot) + local var bytes */
+/* frame_bytes = 16 (ra+s0 slot) + local var bytes */
 void cg_prologue(int frame_bytes) {
-    /* sp -= frame_bytes;  save ra at sp + frame_bytes - 4 */
+    /* sp -= frame_bytes;  save ra, s0;  s0 = sp (frame pointer for locals) */
     cg_addi(REG_SP, REG_SP, -frame_bytes);
     cg_sw(REG_RA, REG_SP, frame_bytes - 4);
+    cg_sw(REG_S0, REG_SP, frame_bytes - 8);
+    cg_addi(REG_S0, REG_SP, 0);
+}
+
+/* ===== Function prologue with parameter storage ===== */
+/* Stores a0..a(N-1) into the first N local variable slots via s0 frame pointer.
+ * Caller must already have allocated local vars at offsets 0,4,8,... for params. */
+void cg_prologue_params(int frame_bytes, int param_count) {
+    cg_addi(REG_SP, REG_SP, -frame_bytes);
+    cg_sw(REG_RA, REG_SP, frame_bytes - 4);
+    cg_sw(REG_S0, REG_SP, frame_bytes - 8);
+    cg_addi(REG_S0, REG_SP, 0);  /* s0 = sp = frame pointer */
+    /* Store incoming a-registers into local var slots (offsets 0, 4, 8, ...) */
+    for (int i = 0; i < param_count; i++) {
+        cg_sw(REG_A0 + i, REG_S0, i * 4);
+    }
 }
 
 void cg_epilogue(int frame_bytes) {
+    cg_lw(REG_S0, REG_SP, frame_bytes - 8);
     cg_lw(REG_RA, REG_SP, frame_bytes - 4);
     cg_addi(REG_SP, REG_SP, frame_bytes);
     cg_jalr(REG_ZERO, REG_RA, 0);  /* ret */
 }
 
-/* ===== Local variable access (stack-relative) ===== */
+/* ===== Local variable access (frame-pointer-relative via s0) ===== */
+/* Uses s0 (frame pointer) rather than sp, because sp changes during
+ * expression stack evaluation.  s0 stays fixed at the bottom of the frame
+ * for the whole function. */
 
-/* Store value from t0 to local var at byte offset from sp */
+/* Store value from t0 to local var at byte offset from s0 */
 void cg_store_local(int offset) {
-    cg_sw(REG_T0, REG_SP, offset);
+    cg_sw(REG_T0, REG_S0, offset);
 }
 
-/* Load local var at byte offset into rd */
+/* Load local var at byte offset from s0 into rd */
 void cg_load_local(int rd, int offset) {
-    cg_lw(rd, REG_SP, offset);
+    cg_lw(rd, REG_S0, offset);
 }
 
 /* ===== Global variable access (absolute address) ===== */
@@ -276,7 +306,7 @@ void cg_pop(int rd) {
 }
 
 /* Binary operator: pop two operands, compute, push result */
-static void cg_binop(void (*op_func)(int, int, int)) {
+static void cg_binop(void (*op_func)(int, int, int), const char *op_name) {
     cg_pop(REG_T1);         /* right operand  */
     cg_pop(REG_T0);         /* left operand   */
     op_func(REG_T0, REG_T0, REG_T1);
@@ -284,11 +314,11 @@ static void cg_binop(void (*op_func)(int, int, int)) {
     cg_sw(REG_T0, REG_SP, 0);
 }
 
-void cg_add_op(void) { cg_binop(cg_add); }
-void cg_sub_op(void) { cg_binop(cg_sub); }
-void cg_mul_op(void) { cg_binop(cg_mul); }
-void cg_div_op(void) { cg_binop(cg_div); }
-void cg_rem_op(void) { cg_binop(cg_rem); }
+void cg_add_op(void) { cg_binop(cg_add, "add"); }
+void cg_sub_op(void) { cg_binop(cg_sub, "sub"); }
+void cg_mul_op(void) { cg_binop(cg_mul, "mul"); }
+void cg_div_op(void) { cg_binop(cg_div, "div"); }
+void cg_rem_op(void) { cg_binop(cg_rem, "rem"); }
 
 /* Unary minus: pop, negate, push */
 void cg_neg_op(void) {
@@ -302,17 +332,20 @@ void cg_neg_op(void) {
 
 /* SLT rd, rs1, rs2 */
 void cg_slt(int rd, int rs1, int rs2) {
-    emit(enc_r(0, (uint32_t)rs2, (uint32_t)rs1, 2, (uint32_t)rd, OP));
+    uint32_t instr = enc_r(0, (uint32_t)rs2, (uint32_t)rs1, 2, (uint32_t)rd, OP);
+    emit(instr);
 }
 
 /* SLTIU rd, rs1, imm  (set-less-than-immediate-unsigned) */
 void cg_sltiu(int rd, int rs1, int imm) {
-    emit(enc_i((uint32_t)imm, (uint32_t)rs1, 3, (uint32_t)rd, OP_IMM));
+    uint32_t instr = enc_i((uint32_t)imm, (uint32_t)rs1, 3, (uint32_t)rd, OP_IMM);
+    emit(instr);
 }
 
 /* XORI rd, rs1, imm */
 void cg_xori(int rd, int rs1, int imm) {
-    emit(enc_i((uint32_t)imm, (uint32_t)rs1, 4, (uint32_t)rd, OP_IMM));
+    uint32_t instr = enc_i((uint32_t)imm, (uint32_t)rs1, 4, (uint32_t)rd, OP_IMM);
+    emit(instr);
 }
 
 /* ===== Comparison operators (pop two, push 0 or 1) ===== */
@@ -364,9 +397,20 @@ void cg_le_op(void) {
 
 static int  label_pos[MAX_LABELS];   /* byte offset of label */
 static int  fixup_pos[MAX_LABELS];   /* byte offset of branch instruction */
-static int  fixup_kind[MAX_LABELS];  /* 0=BEQZ, 1=J */
+static int  fixup_kind[MAX_LABELS];  /* 0=BEQZ, 1=J, 2=CALL (same J-type patch) */
 static int  label_count = 0;
 static int  fixup_count = 0;
+
+/* Reset label/fixup state for a new compilation */
+void cg_reset_labels(void) {
+    label_count = 0;
+    fixup_count = 0;
+}
+
+int cg_get_label_pos(int label_id) {
+    if (label_id < 0 || label_id >= label_count) return -1;
+    return label_pos[label_id];
+}
 
 /* Record a label at the current code position */
 int cg_label(void) {
@@ -396,6 +440,35 @@ int cg_emit_j(void) {
     return id;
 }
 
+/* ===== Function call fixup (forward calls) ===== */
+
+/* Emit JAL ra, 0 (placeholder for forward function call).
+ * Same J-type as cg_emit_j, but rd=ra to save return address.
+ * Returns fixup id. */
+int cg_emit_call(void) {
+    if (fixup_count >= MAX_LABELS) return -1;
+    int id = fixup_count++;
+    fixup_pos[id]  = (int)g_compiler->code_size;
+    fixup_kind[id] = 1;  /* J-type patch logic, same as J */
+    cg_jal(REG_RA, 0);   /* JAL ra, 0 — call, save return address */
+    return id;
+}
+
+/* Emit a backward function call to a known label.
+ * JAL ra, offset — saves return address in ra. */
+void cg_emit_call_back(int label_id) {
+    if (label_id < 0 || label_id >= label_count) return;
+    int target = label_pos[label_id];
+    int offset = target - (int)g_compiler->code_size;
+    cg_jal(REG_RA, offset);
+}
+
+/* Indirect function call via address in register.
+ * JALR ra, rs, 0 — saves return address in ra. */
+void cg_call_indirect(int rs) {
+    cg_jalr(REG_RA, rs, 0);
+}
+
 /* Patch a previously emitted branch/jump to point to the current position */
 void cg_patch(int fixup_id) {
     if (fixup_id < 0 || fixup_id >= fixup_count) return;
@@ -417,13 +490,13 @@ void cg_patch(int fixup_id) {
                 |  ((imm & 0x1E)   << 7)      /* imm[4:1] */
                 |  ((imm & 0x800)  >> 4);     /* imm[11] */
     } else {
-        /* J-type: jal */
+        /* J-type: jal / call — patch the immediate, preserve opcode+rd */
         uint32_t imm = (uint32_t)offset;
-        patched = old & 0x0000007F;  /* keep opcode + rd */
-        patched |= ((imm & 0x80000) << 11)     /* imm[20] */
-                |  ((imm & 0x7FE)   << 20)     /* imm[10:1] */
-                |  ((imm & 0x800)   <<  9)     /* imm[11] */
-                |  ((imm & 0xFF000) >> 12);    /* imm[19:12] */
+        patched = old & 0x00000FFF;  /* keep opcode (bits 6:0) + rd (bits 11:7) */
+        patched |= ((imm & 0x100000) << 11)     /* imm[20] → bit 31 */
+                |  ((imm & 0x7FE)    << 20)     /* imm[10:1] → bits 30:21 */
+                |  ((imm & 0x800)    <<  9)     /* imm[11] → bit 20 */
+                |  (imm & 0xFF000);              /* imm[19:12] → bits 19:12 */
     }
     g_compiler->code[branch_pos / 4] = patched;
 }

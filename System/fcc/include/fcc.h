@@ -19,10 +19,18 @@ enum {
     REG_ZERO = 0,
     REG_RA   = 1,
     REG_SP   = 2,
+    REG_S0   = 8,
     REG_T0   = 5,
     REG_T1   = 6,
     REG_T2   = 7,
     REG_A0   = 10,
+    REG_A1   = 11,
+    REG_A2   = 12,
+    REG_A3   = 13,
+    REG_A4   = 14,
+    REG_A5   = 15,
+    REG_A6   = 16,
+    REG_A7   = 17,
 };
 
 /* ===== Token Types ===== */
@@ -82,6 +90,18 @@ typedef struct {
     int  is_global;
 } VarInfo;
 
+/* ===== Function Table ===== */
+#define MAX_FUNCS      64
+#define MAX_FWD_FIXUPS 16
+
+typedef struct {
+    char name[64];
+    int  label_id;                  /* label marking function entry; -1 if not yet defined */
+    int  params;                    /* number of int parameters */
+    int  fwd_fixups[MAX_FWD_FIXUPS]; /* fixup IDs for forward calls */
+    int  fwd_count;
+} FuncInfo;
+
 /* ===== Compiler ===== */
 typedef struct {
     Lexer     lexer;
@@ -94,6 +114,13 @@ typedef struct {
     int       local_base;   /* index of first local in current function */
     int       local_bytes;  /* total bytes for current function's locals */
     int       next_global;  /* next global address offset */
+    /* Function table */
+    FuncInfo  funcs[MAX_FUNCS];
+    int       func_count;
+    char      current_func_name[64]; /* name of function being compiled */
+    int       current_func_param_count;
+    /* Built-in symbols */
+    uint32_t  exec_func_addr;
 } Compiler;
 
 /* ===== Lexer API (used across fcc modules) ===== */

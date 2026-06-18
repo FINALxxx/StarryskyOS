@@ -8,9 +8,11 @@
 #endif
 
 #include "shell.h"
+#include "shell_port.h"
 
-/* Parser API (lexer API is in fcc.h) */
+/* Parser/Codegen API (lexer API is in fcc.h) */
 int fcc_compile(Compiler *comp);
+int cg_get_label_pos(int label_id);
 
 /* ===== Source buffer ===== */
 static char src_buf[FCC_SRC_MAX];
@@ -98,6 +100,7 @@ int fccCmd(int argc, char *argv[]) {
 
     /* Initialize compiler */
     memset(&compiler, 0, sizeof(compiler));
+    compiler.exec_func_addr = envFunc;
     lexer_init(&compiler.lexer, src_buf);
 
     /* Compile */
@@ -107,10 +110,20 @@ int fccCmd(int argc, char *argv[]) {
         return -1;
     }
 
-    /* Success — print code location */
-    printf("fcc: OK  code=0x%08X  size=%u bytes\r\n",
-           FCC_CODE_BASE, compiler.code_size);
-    printf("     run: exec 0x%08X\r\n", FCC_CODE_BASE);
+    /* Success — find main entry and print code location */
+    uint32_t main_addr = FCC_CODE_BASE;  /* default: first function */
+    for (int i = 0; i < compiler.func_count; i++) {
+        if (strcmp(compiler.funcs[i].name, "main") == 0) {
+            int pos = cg_get_label_pos(compiler.funcs[i].label_id);
+            if (pos >= 0) {
+                main_addr = FCC_CODE_BASE + (uint32_t)pos;
+            }
+            break;
+        }
+    }
+    printf("fcc: OK  main=0x%08X  code=0x%08X  size=%u bytes\r\n",
+           main_addr, FCC_CODE_BASE, compiler.code_size);
+    printf("     run: exec 0x%08X\r\n", main_addr);
 
     return 0;
 }
