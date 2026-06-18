@@ -430,6 +430,31 @@ int cg_emit_beqz(int rd) {
     return id;
 }
 
+/* ===== Logic operators (short-circuit) ===== */
+
+/* Unary NOT: !a — pop, push (t0 == 0) ? 1 : 0 */
+void cg_not_op(void) {
+    cg_pop(REG_T0);
+    /* sltiu t0, t0, 1  →  t0 = (t0 < 1) ? 1 : 0   i.e.  t0 = !t0 */
+    cg_sltiu(REG_T0, REG_T0, 1);
+    cg_addi(REG_SP, REG_SP, -4);
+    cg_sw(REG_T0, REG_SP, 0);
+}
+
+/* Short-circuit AND begin: pop a, beqz t0 → skip_to_false.
+ * Returns fixup id for the skip. */
+int cg_and_begin(void) {
+    cg_pop(REG_T0);
+    return cg_emit_beqz(REG_T0);
+}
+
+/* Short-circuit OR begin: pop a, beqz t0 → eval_b.
+ * Returns fixup id for eval_b. */
+int cg_or_begin(void) {
+    cg_pop(REG_T0);
+    return cg_emit_beqz(REG_T0);
+}
+
 /* Emit JAL x0, 0 (placeholder). Returns fixup id. */
 int cg_emit_j(void) {
     if (fixup_count >= MAX_LABELS) return -1;

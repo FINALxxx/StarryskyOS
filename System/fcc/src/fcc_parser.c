@@ -13,6 +13,9 @@ void cg_push_imm(int imm);
 void cg_add_op(void);  void cg_sub_op(void);
 void cg_mul_op(void);  void cg_div_op(void);  void cg_rem_op(void);
 void cg_neg_op(void);
+void cg_not_op(void);
+int  cg_and_begin(void);
+int  cg_or_begin(void);
 void cg_store_local(int offset);
 void cg_load_local(int rd, int offset);
 void cg_store_global(int addr);
@@ -136,6 +139,8 @@ static void advance(Compiler *comp) {
 }
 
 /* ===== Forward declarations ===== */
+static void parse_or(Compiler *comp);
+static void parse_and(Compiler *comp);
 static void parse_cmp(Compiler *comp);
 static void parse_stmt_loop(Compiler *comp);
 static void parse_assign(Compiler *comp, VarInfo *v);
@@ -224,7 +229,7 @@ static void parse_primary(Compiler *comp) {
     }
     if (comp->lexer.current.type == TOK_LPAREN) {
         advance(comp);
-        parse_cmp(comp);
+        parse_or(comp);
         expect(comp, TOK_RPAREN, "')'");
         return;
     }
@@ -260,7 +265,7 @@ static void parse_call(Compiler *comp, const char *name) {
                     advance(comp);
                 break;
             }
-            parse_cmp(comp);
+            parse_or(comp);
             arg_count++;
         } while (comp->lexer.current.type == TOK_COMMA && (advance(comp), 1));
     }
@@ -323,6 +328,12 @@ static void parse_call(Compiler *comp, const char *name) {
 }
 
 static void parse_unary(Compiler *comp) {
+    if (comp->lexer.current.type == TOK_NOT) {
+        advance(comp);
+        parse_unary(comp);
+        cg_not_op();
+        return;
+    }
     if (comp->lexer.current.type == TOK_MINUS) {
         advance(comp);
         parse_unary(comp);
@@ -357,6 +368,34 @@ static void parse_add(Compiler *comp) {
         parse_mul(comp);
         if (op == TOK_PLUS) cg_add_op();
         else                cg_sub_op();
+    }
+}
+
+/* ===== Logic OR: a || b  (short-circuit) ===== */
+static void parse_or(Compiler *comp) {
+    parse_and(comp);
+    while (!comp->error && comp->lexer.current.type == TOK_OR) {
+        advance(comp);                            /* skip '||' */
+        int fix_eval = cg_or_begin();             /* pop a, beqz → eval b */
+        cg_push_imm(1);                           /* a != 0 → push 1 */
+        int fix_jmp  = cg_emit_j();               /* jump over eval_b */
+        cg_patch(fix_eval);                       /* here: eval b (a == 0) */
+        parse_and(comp);                          /* evaluate b */
+        cg_patch(fix_jmp);                        /* merge */
+    }
+}
+
+/* ===== Logic AND: a && b  (short-circuit) ===== */
+static void parse_and(Compiler *comp) {
+    parse_cmp(comp);
+    while (!comp->error && comp->lexer.current.type == TOK_AND) {
+        advance(comp);                            /* skip '&&' */
+        int fix_skip = cg_and_begin();            /* pop a, beqz → false */
+        parse_cmp(comp);                          /* evaluate b */
+        int fix_jmp  = cg_emit_j();               /* jump over false path */
+        cg_patch(fix_skip);                       /* false path: push 0 */
+        cg_push_imm(0);
+        cg_patch(fix_jmp);                        /* merge */
     }
 }
 
@@ -395,7 +434,7 @@ static void parse_block(Compiler *comp) {
 static void parse_if(Compiler *comp) {
     advance(comp);
     expect(comp, TOK_LPAREN, "'('");
-    parse_cmp(comp);
+    parse_or(comp);
     expect(comp, TOK_RPAREN, "')'");
     cg_pop(REG_T0);
     int fix_else = cg_emit_beqz(REG_T0);
@@ -415,7 +454,7 @@ static void parse_while(Compiler *comp) {
     advance(comp);
     int start = cg_label();
     expect(comp, TOK_LPAREN, "'('");
-    parse_cmp(comp);
+    parse_or(comp);
     expect(comp, TOK_RPAREN, "')'");
     cg_pop(REG_T0);
     int fix_end = cg_emit_beqz(REG_T0);
@@ -435,7 +474,7 @@ static void parse_stmt_loop(Compiler *comp) {
             parse_while(comp);
         } else if (comp->lexer.current.type == TOK_RETURN) {
             advance(comp);
-            parse_cmp(comp);
+            parse_or(comp);
             cg_pop(REG_A0);
             expect(comp, TOK_SEMI, "';'");
         } else if (comp->lexer.current.type == TOK_IDENT) {
@@ -491,7 +530,7 @@ static void parse_stmt_loop(Compiler *comp) {
 
 static void parse_assign(Compiler *comp, VarInfo *v) {
     expect(comp, TOK_ASSIGN, "'='");
-    parse_cmp(comp);
+    parse_or(comp);
     cg_pop(REG_T0);
     if (v->is_global)
         cg_store_global(v->offset);
