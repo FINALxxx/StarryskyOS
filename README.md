@@ -24,7 +24,7 @@
 - **MCU**: RISC-V RV32IM, 72 MHz
 - **RAM**: SRAM + 8 MB PSRAM
 - **存储**: SPI Flash (FatFs 文件系统)
-- **适配板卡**: StarrySky C2, L3.1
+- **适配板卡**: StarrySky C2 (其他板卡正在支持中...)
 
 ## 工具链
 
