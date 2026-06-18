@@ -109,6 +109,7 @@
 ### 前置条件
 
 - StarrySky C2 开发板
+- 需要连接外接flash（型号为W25Q64CV，若不适配，可以在sfud_cfg.h中进行修改，所有支持型号可以参考sfud仓库）
 - RISC-V 交叉编译工具链: `riscv64-unknown-elf-gcc`
 - GNU Make
 
@@ -126,7 +127,3 @@ make              # 编译生成固件到 build/
 ## License
 
 各组件按各自 License 分发，详见对应目录。
-
----
-
-*StarrySkyShell edited from letter-shell NevermindZZT | FileSystem transplanted from FatFs ChaN | 协程库、编辑器、编译器为自研组件*
