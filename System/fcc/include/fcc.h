@@ -5,8 +5,9 @@
 #include <stddef.h>
 
 /* ===== Code Buffer ===== */
-/* Internal SRAM — must be executable; PSRAM (0x40000000+) is data-only */
-#define FCC_CODE_BASE    0x30000000
+/* Internal SRAM — must be executable; PSRAM (0x40000000+) is data-only.
+ * Offset by 64 KB to keep clear of any boot/reserved area. */
+#define FCC_CODE_BASE    0x30010000
 #define FCC_CODE_MAX     (32 * 1024)
 #define FCC_GLOBAL_BASE  (FCC_CODE_BASE + FCC_CODE_MAX)
 

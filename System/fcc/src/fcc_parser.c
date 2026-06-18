@@ -18,6 +18,13 @@ void cg_load_global(int rd, int addr);
 void cg_addi(int rd, int rs1, int imm);
 void cg_sw(int rs2, int rs1, int offset);
 void cg_li(int rd, int imm);
+void cg_lt_op(void); void cg_le_op(void); void cg_gt_op(void);
+void cg_ge_op(void); void cg_eq_op(void); void cg_ne_op(void);
+int  cg_label(void);
+int  cg_emit_beqz(int rd);
+int  cg_emit_j(void);
+void cg_patch(int fixup_id);
+void cg_emit_jback(int label_id);
 
 /* ===== Symbol table ===== */
 
@@ -62,9 +69,11 @@ static void advance(Compiler *comp) {
 }
 
 /* ===== Forward declarations ===== */
-static void parse_add(Compiler *comp);
+static void parse_cmp(Compiler *comp);
+static void parse_stmt_loop(Compiler *comp);
+static void parse_assign(Compiler *comp, VarInfo *v);
 
-/* ===== Expression parser (rvalue) ===== */
+/* ===== Expression parser ===== */
 
 static void parse_primary(Compiler *comp) {
     if (comp->lexer.current.type == TOK_NUMBER) {
@@ -85,7 +94,7 @@ static void parse_primary(Compiler *comp) {
     }
     if (comp->lexer.current.type == TOK_LPAREN) {
         advance(comp);
-        parse_add(comp);
+        parse_cmp(comp);
         expect(comp, TOK_RPAREN, "')'");
         return;
     }
@@ -130,75 +139,82 @@ static void parse_add(Compiler *comp) {
     }
 }
 
-/* ===== Statement helpers ===== */
-
-static void parse_assign(Compiler *comp, VarInfo *v) {
-    expect(comp, TOK_ASSIGN, "'='");
+static void parse_cmp(Compiler *comp) {
     parse_add(comp);
-    cg_pop(REG_T0);                          /* RHS value → t0 */
-    if (v->is_global)
-        cg_store_global(v->offset);
-    else
-        cg_store_local(v->offset);           /* store, no push-back */
-    expect(comp, TOK_SEMI, "';'");
-}
-
-/**
- * Parse local var declaration: "int" already consumed.
- * Only adds to symbol table — no code emitted (declarations precede
- * prologue).  Initialization must use a separate assignment statement.
- */
-static void parse_local_decl(Compiler *comp) {
-    if (comp->lexer.current.type != TOK_IDENT) {
-        parse_error(comp, "expected variable name");
-        return;
-    }
-    char *name = tok_name(comp);
-    for (int i = comp->local_base; i < comp->var_count; i++) {
-        if (strcmp(comp->vars[i].name, name) == 0) {
-            parse_error(comp, "duplicate variable");
-            return;
+    while (!comp->error
+           && (comp->lexer.current.type == TOK_EQ
+               || comp->lexer.current.type == TOK_NE
+               || comp->lexer.current.type == TOK_LT
+               || comp->lexer.current.type == TOK_GT
+               || comp->lexer.current.type == TOK_LE
+               || comp->lexer.current.type == TOK_GE)) {
+        TokenType op = comp->lexer.current.type;
+        advance(comp);
+        parse_add(comp);
+        switch (op) {
+            case TOK_EQ: cg_eq_op(); break;
+            case TOK_NE: cg_ne_op(); break;
+            case TOK_LT: cg_lt_op(); break;
+            case TOK_GT: cg_gt_op(); break;
+            case TOK_LE: cg_le_op(); break;
+            case TOK_GE: cg_ge_op(); break;
+            default: break;
         }
     }
-    advance(comp);  /* consume IDENT */
-
-    VarInfo *v = sym_add(comp, name, 0);
-    v->offset = comp->local_bytes;
-    comp->local_bytes += 4;
-
-    /* No initializer in declaration — use a separate assignment stmt */
-    if (comp->lexer.current.type == TOK_ASSIGN) {
-        parse_error(comp, "initializer not supported in declaration; use 'x = ...;'");
-        return;
-    }
-    expect(comp, TOK_SEMI, "';'");
 }
 
-/* ===== Function body (after "int IDENT") ===== */
+/* ===== Control flow ===== */
 
-static void parse_function_body(Compiler *comp, const char *name) {
-    expect(comp, TOK_LPAREN, "'('");
-    expect(comp, TOK_RPAREN, "')'");
+static void parse_block(Compiler *comp) {
     expect(comp, TOK_LBRACE, "'{'");
+    parse_stmt_loop(comp);
+    expect(comp, TOK_RBRACE, "'}'");
+}
 
-    /* Pass 1: collect local declarations */
-    comp->local_base = comp->var_count;
-    comp->local_bytes = 0;
-
-    while (!comp->error
-           && comp->lexer.current.type == TOK_INT) {
+static void parse_if(Compiler *comp) {
+    advance(comp);
+    expect(comp, TOK_LPAREN, "'('");
+    parse_cmp(comp);
+    expect(comp, TOK_RPAREN, "')'");
+    cg_pop(REG_T0);
+    int fix_else = cg_emit_beqz(REG_T0);
+    parse_block(comp);
+    if (comp->lexer.current.type == TOK_ELSE) {
         advance(comp);
-        parse_local_decl(comp);
+        int fix_end = cg_emit_j();
+        cg_patch(fix_else);
+        parse_block(comp);
+        cg_patch(fix_end);
+    } else {
+        cg_patch(fix_else);
     }
+}
 
-    int frame = 16 + comp->local_bytes;
-    cg_prologue(frame);
+static void parse_while(Compiler *comp) {
+    advance(comp);
+    int start = cg_label();
+    expect(comp, TOK_LPAREN, "'('");
+    parse_cmp(comp);
+    expect(comp, TOK_RPAREN, "')'");
+    cg_pop(REG_T0);
+    int fix_end = cg_emit_beqz(REG_T0);
+    parse_block(comp);
+    cg_emit_jback(start);
+    cg_patch(fix_end);
+}
 
-    /* Pass 2: emit statement code (loop for multiple statements) */
-    while (!comp->error && comp->lexer.current.type != TOK_RBRACE) {
-        if (comp->lexer.current.type == TOK_RETURN) {
+/* ===== Statement loop ===== */
+
+static void parse_stmt_loop(Compiler *comp) {
+    while (!comp->error
+           && comp->lexer.current.type != TOK_RBRACE) {
+        if (comp->lexer.current.type == TOK_IF) {
+            parse_if(comp);
+        } else if (comp->lexer.current.type == TOK_WHILE) {
+            parse_while(comp);
+        } else if (comp->lexer.current.type == TOK_RETURN) {
             advance(comp);
-            parse_add(comp);
+            parse_cmp(comp);
             cg_pop(REG_A0);
             expect(comp, TOK_SEMI, "';'");
         } else if (comp->lexer.current.type == TOK_IDENT) {
@@ -214,10 +230,68 @@ static void parse_function_body(Compiler *comp, const char *name) {
             break;
         }
     }
+}
+
+static void parse_assign(Compiler *comp, VarInfo *v) {
+    expect(comp, TOK_ASSIGN, "'='");
+    parse_cmp(comp);
+    cg_pop(REG_T0);
+    if (v->is_global)
+        cg_store_global(v->offset);
+    else
+        cg_store_local(v->offset);
+    expect(comp, TOK_SEMI, "';'");
+}
+
+/* ===== Local var declaration ===== */
+
+static void parse_local_decl(Compiler *comp) {
+    if (comp->lexer.current.type != TOK_IDENT) {
+        parse_error(comp, "expected variable name");
+        return;
+    }
+    char *name = tok_name(comp);
+    for (int i = comp->local_base; i < comp->var_count; i++) {
+        if (strcmp(comp->vars[i].name, name) == 0) {
+            parse_error(comp, "duplicate variable");
+            return;
+        }
+    }
+    advance(comp);
+
+    VarInfo *v = sym_add(comp, name, 0);
+    v->offset = comp->local_bytes;
+    comp->local_bytes += 4;
+
+    if (comp->lexer.current.type == TOK_ASSIGN) {
+        parse_error(comp, "initializer not supported in declaration");
+        return;
+    }
+    expect(comp, TOK_SEMI, "';'");
+}
+
+/* ===== Function body ===== */
+
+static void parse_function_body(Compiler *comp, const char *name) {
+    expect(comp, TOK_LPAREN, "'('");
+    expect(comp, TOK_RPAREN, "')'");
+    expect(comp, TOK_LBRACE, "'{'");
+
+    comp->local_base = comp->var_count;
+    comp->local_bytes = 0;
+
+    while (!comp->error
+           && comp->lexer.current.type == TOK_INT) {
+        advance(comp);
+        parse_local_decl(comp);
+    }
+
+    int frame = 16 + comp->local_bytes;
+    cg_prologue(frame);
+
+    parse_stmt_loop(comp);
 
     cg_epilogue(frame);
-
-    /* Pop locals from symbol table */
     comp->var_count = comp->local_base;
 
     expect(comp, TOK_RBRACE, "'}'");
@@ -225,20 +299,13 @@ static void parse_function_body(Compiler *comp, const char *name) {
 
 /* ===== Top-level parser ===== */
 
-/**
- * program → { global_decl | function }
- *
- * Both start with "int" IDENT.  We consume "int" IDENT, then:
- *   '('  → function
- *   ';' or '=' → global variable
- */
 static void parse_program(Compiler *comp) {
     while (!comp->error && comp->lexer.current.type != TOK_EOF) {
         if (comp->lexer.current.type != TOK_INT) {
             parse_error(comp, "expected 'int' at top level");
             break;
         }
-        advance(comp);  /* consume "int" */
+        advance(comp);
 
         if (comp->lexer.current.type != TOK_IDENT) {
             parse_error(comp, "expected identifier");
@@ -247,13 +314,11 @@ static void parse_program(Compiler *comp) {
         char name[64];
         strncpy(name, tok_name(comp), 63);
         name[63] = '\0';
-        advance(comp);  /* consume IDENT */
+        advance(comp);
 
         if (comp->lexer.current.type == TOK_LPAREN) {
-            /* Function */
             parse_function_body(comp, name);
         } else {
-            /* Global variable */
             if (sym_lookup(comp, name)) {
                 parse_error(comp, "duplicate global variable");
                 break;
@@ -276,8 +341,6 @@ static void parse_program(Compiler *comp) {
         }
     }
 }
-
-/* ===== Entry point ===== */
 
 int fcc_compile(Compiler *comp) {
     codegen_init(comp);
