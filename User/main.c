@@ -9,6 +9,8 @@ void mini_coroutine_test(void* param){
     coroutine_entry();
 }
 
+
+// Warn: 若使用fatfs启动shell，需要额外注意栈分配，若栈溢出可能会导致fatfs分配FIL file失败，导致无法打开文件
 void main(){
     hal_sys_uart_init();
 

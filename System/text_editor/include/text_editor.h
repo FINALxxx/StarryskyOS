@@ -5,7 +5,9 @@
 #include <stddef.h>
 
 /* ===== Editor Buffer Limits ===== */
-#define MAX_FILE_SIZE   (32 * 1024)
+#define MAX_FILE_SIZE   (24 * 1024)  /* reduced from 32KB to leave stack headroom;
+                                       128KB SRAM with ~60KB BSS only leaves ~6KB
+                                       stack — not enough for FIL.buf[4096] */
 #define MAX_LINES       8192
 #define MAX_FILENAME    256
 #define LINE_NUM_WIDTH  5

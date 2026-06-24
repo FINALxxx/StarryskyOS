@@ -20,6 +20,14 @@
 /* ===== Singleton Editor State ===== */
 static EditorState editor;
 
+/* Properly-typed reference to ff.c's global FatFs array.
+ * NOTE: Must stay a declaration — adding static definitions here
+ * bloats BSS and triggers stack/BSS collisions during boot. */
+#ifdef CONFIG_COMPONENT_FLASH_FS
+extern FATFS* FatFs[FF_VOLUMES];
+#endif
+
+
 /* ===== Helpers ===== */
 
 /**
