@@ -1,20 +1,27 @@
 #include "main.h"
+#include "test.h"
 
 void easy_print(void* param){
     printf("I will print: %s\r\n", (char*)param);
 }
 
-// Tips: Letter-shell uses slow sys_uart leaving hp_uart available for high-demand situation.
-//       if there exists a communication loss, it'll be fine by setting uart boudrate to 9600.
+void mini_coroutine_test(void* param){
+    coroutine_entry();
+}
+
 void main(){
     hal_sys_uart_init();
 
-    func_node func_node = {
+    // 为exec_func功能创建函数调用链
+    flist[0] = (func_node){
         .func = easy_print,
-        .param = "Hello, World",
-        .next = NULL,
+        .default_param = "Hello, World",
     };
-    set_fnode(&func_node);
+
+    flist[1] = (func_node){
+        .func = mini_coroutine_test,
+        .default_param = NULL,
+    };
 
     create_shell_env_varible();
 
